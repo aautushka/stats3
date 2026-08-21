@@ -1,0 +1,14 @@
+notebook
+nbconvert
+nbformat
+nbclient
+numpy
+pandas
+matplotlib
+scipy
+statsmodels
+seaborn
+empiricaldist
+playwright
+pypdf
+pytables
