@@ -10492,7 +10492,8 @@ How does it compare with the difference in pregnancy length for first babies and
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>FreqTab.from_seq(resp.totincr, name="totincr")</code> scans the column once and records, for each distinct value $v$, its frequency $f(v)$ — the count of rows where the column equals $v$. Internally <code>FreqTab</code> is a pandas <code>Series</code> whose index holds the unique values and whose data holds the corresponding counts. The <code>from_seq</code> constructor is equivalent to calling <code>pd.Series(data).value_counts().sort_index()</code>, but the <code>FreqTab</code> wrapper adds domain-specific methods (<code>.bar()</code>, <code>.mode()</code>, callable lookup, etc.).</p>
+<p>A critical thing to notice about <code>totincr</code> is that its values (1 through 14) are <strong>ordinal codes</strong>, not dollar amounts. The integer labels encode ordered income brackets whose widths are unequal. Treating the codes as if they were quantitative — computing a mean of the code numbers, for example — would be misleading, because the distance between code 1 and code 2 is not the same as the distance between code 13 and code 14 in dollar terms. A frequency table is the right first tool precisely because it sidesteps this pitfall: it shows you how many respondents fall into each labelled category without imposing any arithmetic on the labels. The bar chart's x-axis still uses the numeric codes, so the reader must remember to consult the codebook to translate codes back to income ranges before drawing any substantive conclusions about the income distribution's shape.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10507,7 +10508,6 @@ How does it compare with the difference in pregnancy length for first babies and
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>FreqTab.from_seq(resp.totincr, name="totincr")</code> scans the column once and records, for each distinct value $v$, its frequency $f(v)$ — the count of rows where the column equals $v$. Internally <code>FreqTab</code> is a pandas <code>Series</code> whose index holds the unique values and whose data holds the corresponding counts. The <code>from_seq</code> constructor is equivalent to calling <code>pd.Series(data).value_counts().sort_index()</code>, but the <code>FreqTab</code> wrapper adds domain-specific methods (<code>.bar()</code>, <code>.mode()</code>, callable lookup, etc.).</p>
-<p>A critical thing to notice about <code>totincr</code> is that its values (1 through 14) are <strong>ordinal codes</strong>, not dollar amounts. The integer labels encode ordered income brackets whose widths are unequal. Treating the codes as if they were quantitative — computing a mean of the code numbers, for example — would be misleading, because the distance between code 1 and code 2 is not the same as the distance between code 13 and code 14 in dollar terms. A frequency table is the right first tool precisely because it sidesteps this pitfall: it shows you how many respondents fall into each labelled category without imposing any arithmetic on the labels. The bar chart's x-axis still uses the numeric codes, so the reader must remember to consult the codebook to translate codes back to income ranges before drawing any substantive conclusions about the income distribution's shape.</p></div></main>
+</main>
 </body>
 </html>

@@ -11010,7 +11010,12 @@ Is the slope close to 2?</p>
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Body Mass Index uses the formula $\text{BMI} = w / h^2$, with the exponent 2 chosen historically on the basis that average weight scales approximately with height squared. This exercise asks you to test that claim by recovering the exponent from data — a nice demonstration of how a power-law relationship can be linearised with logarithms.</p>
+<p>If $w = b \cdot h^a$, taking $\log_{10}$ of both sides gives</p>
+<p>$$\log_{10} w = \log_{10} b + a \cdot \log_{10} h$$</p>
+<p>which is a linear equation in $(\log_{10} h,\, \log_{10} w)$ with slope $a$ and intercept $\log_{10} b$. Running <code>linregress(log_heights, log_weights)</code> therefore estimates $a$ directly as the slope — no algebraic post-processing required. The result, approximately 2.04, is indeed close to 2, providing empirical support for the BMI convention.</p>
+<p>The choice of logarithm base is immaterial for the slope: if you use $\ln$ instead of $\log_{10}$, the slope $a$ is unchanged because the change of base is a multiplicative constant that cancels in the ratio that defines slope. Only the intercept changes.</p>
+<p>A hidden assumption here is that the power-law model $w = b h^a$ is the correct functional form. The linearity of the log-log scatter plot (along with the symmetric residuals) is evidence in its favour, but not proof. The model also assumes multiplicative noise — that the true relationship is $w = b h^a \cdot \epsilon$ where $\epsilon$ is a positive random variable, which is exactly what the log transformation converts into additive Normal noise. If instead the noise were additive on the raw scale ($w = b h^a + \epsilon$), working on the log scale would not be appropriate. Examining the residual distribution (roughly symmetric on the log scale) is the practical check the solution implicitly performs.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11025,11 +11030,6 @@ Is the slope close to 2?</p>
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Body Mass Index uses the formula $\text{BMI} = w / h^2$, with the exponent 2 chosen historically on the basis that average weight scales approximately with height squared. This exercise asks you to test that claim by recovering the exponent from data — a nice demonstration of how a power-law relationship can be linearised with logarithms.</p>
-<p>If $w = b \cdot h^a$, taking $\log_{10}$ of both sides gives</p>
-<p>$$\log_{10} w = \log_{10} b + a \cdot \log_{10} h$$</p>
-<p>which is a linear equation in $(\log_{10} h,\, \log_{10} w)$ with slope $a$ and intercept $\log_{10} b$. Running <code>linregress(log_heights, log_weights)</code> therefore estimates $a$ directly as the slope — no algebraic post-processing required. The result, approximately 2.04, is indeed close to 2, providing empirical support for the BMI convention.</p>
-<p>The choice of logarithm base is immaterial for the slope: if you use $\ln$ instead of $\log_{10}$, the slope $a$ is unchanged because the change of base is a multiplicative constant that cancels in the ratio that defines slope. Only the intercept changes.</p>
-<p>A hidden assumption here is that the power-law model $w = b h^a$ is the correct functional form. The linearity of the log-log scatter plot (along with the symmetric residuals) is evidence in its favour, but not proof. The model also assumes multiplicative noise — that the true relationship is $w = b h^a \cdot \epsilon$ where $\epsilon$ is a positive random variable, which is exactly what the log transformation converts into additive Normal noise. If instead the noise were additive on the raw scale ($w = b h^a + \epsilon$), working on the log scale would not be appropriate. Examining the residual distribution (roughly symmetric on the log scale) is the practical check the solution implicitly performs.</p></div></main>
+</main>
 </body>
 </html>

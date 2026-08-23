@@ -10384,7 +10384,9 @@ Name: totalwgt_lb, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>preg.query("caseid == 2298")</code> constructs a <strong>boolean mask</strong> — a Series of <code>True</code>/<code>False</code> values with the same index as <code>preg</code> — and returns only the rows where the condition holds. It is equivalent to <code>preg[preg["caseid"] == 2298]</code>, but the string syntax is more readable and avoids repeated typing of the DataFrame name. Conceptually this is <strong>conditioning</strong>: you are restricting the sample space to rows belonging to a single respondent, which is necessary because each respondent can appear multiple times (once per pregnancy).</p>
+<p>The output for caseid 2298 shows four pregnancies with lengths 40, 36, 30, 40 weeks. The 30-week entry is notably short — likely a preterm birth or a pregnancy that ended before term. The mixed lengths within one respondent illustrate that <code>prglngth</code> varies substantially even within a person's reproductive history.</p>
+<p>The second part adds a compound condition: <code>"caseid == 5013 and birthord == 1"</code>. The <code>and</code> keyword inside the query string is evaluated as a row-wise logical AND (not Python's short-circuit <code>and</code>), selecting only the row where both conditions are simultaneously true. Looking at all four rows for caseid 5013 first reveals that row 5517 has a <code>NaN</code> birth weight — <code>birthord</code> for that pregnancy must be missing, meaning it was not a live birth. The compound query cleanly isolates the single first-born live birth (row 5516, 7.375 lb) without needing to inspect the intermediate output. This pattern — progressively narrowing a dataset with chained conditions — is the workhorse operation of exploratory data analysis.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10399,8 +10401,6 @@ Name: totalwgt_lb, dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>preg.query("caseid == 2298")</code> constructs a <strong>boolean mask</strong> — a Series of <code>True</code>/<code>False</code> values with the same index as <code>preg</code> — and returns only the rows where the condition holds. It is equivalent to <code>preg[preg["caseid"] == 2298]</code>, but the string syntax is more readable and avoids repeated typing of the DataFrame name. Conceptually this is <strong>conditioning</strong>: you are restricting the sample space to rows belonging to a single respondent, which is necessary because each respondent can appear multiple times (once per pregnancy).</p>
-<p>The output for caseid 2298 shows four pregnancies with lengths 40, 36, 30, 40 weeks. The 30-week entry is notably short — likely a preterm birth or a pregnancy that ended before term. The mixed lengths within one respondent illustrate that <code>prglngth</code> varies substantially even within a person's reproductive history.</p>
-<p>The second part adds a compound condition: <code>"caseid == 5013 and birthord == 1"</code>. The <code>and</code> keyword inside the query string is evaluated as a row-wise logical AND (not Python's short-circuit <code>and</code>), selecting only the row where both conditions are simultaneously true. Looking at all four rows for caseid 5013 first reveals that row 5517 has a <code>NaN</code> birth weight — <code>birthord</code> for that pregnancy must be missing, meaning it was not a live birth. The compound query cleanly isolates the single first-born live birth (row 5516, 7.375 lb) without needing to inspect the intermediate output. This pattern — progressively narrowing a dataset with chained conditions — is the workhorse operation of exploratory data analysis.</p></div></main>
+</main>
 </body>
 </html>

@@ -13092,7 +13092,11 @@ p-value 0.0018269483689770105
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise demonstrates that the <code>Normal</code> class machinery extends directly to published summary statistics: when a study reports estimated means and standard errors (but not raw data), you can construct <code>Normal(mu, se**2)</code> objects directly, since the standard error <strong>is</strong> the standard deviation of the sampling distribution of the mean.</p>
+<p>The solution creates four <code>Normal</code> objects with variances set to $\text{SE}^2$ rather than $\sigma^2/n$. This bypasses the need to know sample sizes — the standard error already encodes that information. The differences <code>male_before - female_before</code> and <code>male_after - female_after</code> give sampling distributions for the gender gap at each time point. Their variances add because the male and female group estimates are independent:</p>
+<p>$$\text{Var}(\bar{X}_m - \bar{X}_f) = \text{SE}_m^2 + \text{SE}_f^2$$</p>
+<p>The difference-in-differences <code>diff_after - diff_before</code> then gives the change in the gap, again with compounding variances. The <code>summarize</code> function computes a p-value for each quantity by evaluating <code>dist.cdf(0)</code> (or its complement): if the distribution's mean is positive, the p-value for testing whether the true quantity is zero or negative is the probability mass below zero.</p>
+<p>The key result — mean $-1.4$, 95% CI $[-2.34, -0.46]$, $p \approx 0.002$ — provides strong evidence that the gender gap in self-reported programming contribution narrowed after the intervention. A hidden assumption throughout is that the reported standard errors are <strong>frequentist</strong> standard errors (not Bayesian posterior standard deviations), and that the four group estimates are mutually independent — the study design (separate pre/post surveys with different male/female groups) makes this plausible but worth examining for repeated-measures structures.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -13107,10 +13111,6 @@ p-value 0.0018269483689770105
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise demonstrates that the <code>Normal</code> class machinery extends directly to published summary statistics: when a study reports estimated means and standard errors (but not raw data), you can construct <code>Normal(mu, se**2)</code> objects directly, since the standard error <strong>is</strong> the standard deviation of the sampling distribution of the mean.</p>
-<p>The solution creates four <code>Normal</code> objects with variances set to $\text{SE}^2$ rather than $\sigma^2/n$. This bypasses the need to know sample sizes — the standard error already encodes that information. The differences <code>male_before - female_before</code> and <code>male_after - female_after</code> give sampling distributions for the gender gap at each time point. Their variances add because the male and female group estimates are independent:</p>
-<p>$$\text{Var}(\bar{X}_m - \bar{X}_f) = \text{SE}_m^2 + \text{SE}_f^2$$</p>
-<p>The difference-in-differences <code>diff_after - diff_before</code> then gives the change in the gap, again with compounding variances. The <code>summarize</code> function computes a p-value for each quantity by evaluating <code>dist.cdf(0)</code> (or its complement): if the distribution's mean is positive, the p-value for testing whether the true quantity is zero or negative is the probability mass below zero.</p>
-<p>The key result — mean $-1.4$, 95% CI $[-2.34, -0.46]$, $p \approx 0.002$ — provides strong evidence that the gender gap in self-reported programming contribution narrowed after the intervention. A hidden assumption throughout is that the reported standard errors are <strong>frequentist</strong> standard errors (not Bayesian posterior standard deviations), and that the four group estimates are mutually independent — the study design (separate pre/post surveys with different male/female groups) makes this plausible but worth examining for repeated-measures structures.</p></div></main>
+</main>
 </body>
 </html>

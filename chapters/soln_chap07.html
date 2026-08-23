@@ -11232,7 +11232,9 @@ Compute the correlation coefficient and rank correlation. Are they substantially
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>With roughly 400,000 respondents, every visualisation decision is forced by overplotting. The jitter applied to height (standard deviation 2.8 cm) is calibrated to smear the rounding artifact: reported heights are rounded to the nearest centimetre, so without jitter the scatter plot shows discrete vertical stripes. Similarly, weights are jittered by 1 kg. The choice of $s=0.1$ (marker size) and $\alpha = 0.01$ (transparency) means that a region needs approximately 100 overlapping points before it appears solid — appropriate for a dataset this dense.</p>
+<p><code>xlim</code> and <code>ylim</code> clip to a biologically reasonable range. This is not just cosmetic: clinical outliers (e.g., individuals over 200 kg) can compress the visible portion of the plot and obscure the pattern for the majority of respondents.</p>
+<p>The decile plot reveals an approximately linear relationship, and the correlation comparison is instructive: Pearson $r \approx 0.51$, Spearman $\rho \approx 0.54$. The gap is larger than in Exercise 7.2 and in a consistent direction — rank correlation is higher. This is the expected signature of right-skewed outliers: a small number of individuals with very high weights are far from the main cloud, pulling the Pearson estimate down (since they inflate $\sigma_y$ without contributing proportionally to the covariance), while the rank transformation neutralises their influence by assigning them the top ranks. In this context, Spearman's $\rho$ is the more trustworthy summary of the strength of the height-weight relationship across the bulk of the population.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11247,8 +11249,6 @@ Compute the correlation coefficient and rank correlation. Are they substantially
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>With roughly 400,000 respondents, every visualisation decision is forced by overplotting. The jitter applied to height (standard deviation 2.8 cm) is calibrated to smear the rounding artifact: reported heights are rounded to the nearest centimetre, so without jitter the scatter plot shows discrete vertical stripes. Similarly, weights are jittered by 1 kg. The choice of $s=0.1$ (marker size) and $\alpha = 0.01$ (transparency) means that a region needs approximately 100 overlapping points before it appears solid — appropriate for a dataset this dense.</p>
-<p><code>xlim</code> and <code>ylim</code> clip to a biologically reasonable range. This is not just cosmetic: clinical outliers (e.g., individuals over 200 kg) can compress the visible portion of the plot and obscure the pattern for the majority of respondents.</p>
-<p>The decile plot reveals an approximately linear relationship, and the correlation comparison is instructive: Pearson $r \approx 0.51$, Spearman $\rho \approx 0.54$. The gap is larger than in Exercise 7.2 and in a consistent direction — rank correlation is higher. This is the expected signature of right-skewed outliers: a small number of individuals with very high weights are far from the main cloud, pulling the Pearson estimate down (since they inflate $\sigma_y$ without contributing proportionally to the covariance), while the rank transformation neutralises their influence by assigning them the top ranks. In this context, Spearman's $\rho$ is the more trustworthy summary of the strength of the height-weight relationship across the bulk of the population.</p></div></main>
+</main>
 </body>
 </html>

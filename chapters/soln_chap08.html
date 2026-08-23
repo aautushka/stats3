@@ -11456,7 +11456,9 @@ How does this result vary as you increase or decrease the length of the sequence
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise replicates the Miller and Sanjurjo (2018) finding: the statistic "fraction of hits following three consecutive hits," computed on a finite i.i.d. Bernoulli(0.5) sequence, has expected value strictly less than 0.5 even though the shots are truly independent.</p>
+<p>The mechanism in the code: <code>np.correlate(seq, [1,1,1], mode="valid")</code> slides a window of length 3 over the sequence and returns the dot product with the all-ones kernel at each position — equivalent to computing the sum of each consecutive triple. Positions where this sum equals 3 identify the end of a run of three hits; the element at index <code>i+3</code> is the successor. The function carefully excludes the last position (where no successor exists), which is itself a source of bias: runs of three hits that fall at the very end of the sequence are excluded from the denominator but would have contributed a hit had the sequence continued.</p>
+<p>Running 10,001 simulations with sequence length 50 gives an average conditional probability of about 0.42 — far below 0.5. Increasing to length 100 gives ~0.46, and to 200 gives ~0.48. The statistic converges to 0.5 as sequence length grows (it is <strong>consistent</strong>) but is downward biased for any finite $n$ — exactly the property that fooled Gilovich, Vallone, and Tversky (1985) into concluding no hot hand existed. <code>np.nanmean</code> correctly ignores simulations where no triple-hit occurred (which returns <code>np.nan</code>), avoiding the misleading anchor of treating "no qualifying events" as a zero probability.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b3d5dbf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11496,8 +11498,6 @@ For an overview of the topic and an explanation of the error, <a href="https://w
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise replicates the Miller and Sanjurjo (2018) finding: the statistic "fraction of hits following three consecutive hits," computed on a finite i.i.d. Bernoulli(0.5) sequence, has expected value strictly less than 0.5 even though the shots are truly independent.</p>
-<p>The mechanism in the code: <code>np.correlate(seq, [1,1,1], mode="valid")</code> slides a window of length 3 over the sequence and returns the dot product with the all-ones kernel at each position — equivalent to computing the sum of each consecutive triple. Positions where this sum equals 3 identify the end of a run of three hits; the element at index <code>i+3</code> is the successor. The function carefully excludes the last position (where no successor exists), which is itself a source of bias: runs of three hits that fall at the very end of the sequence are excluded from the denominator but would have contributed a hit had the sequence continued.</p>
-<p>Running 10,001 simulations with sequence length 50 gives an average conditional probability of about 0.42 — far below 0.5. Increasing to length 100 gives ~0.46, and to 200 gives ~0.48. The statistic converges to 0.5 as sequence length grows (it is <strong>consistent</strong>) but is downward biased for any finite $n$ — exactly the property that fooled Gilovich, Vallone, and Tversky (1985) into concluding no hot hand existed. <code>np.nanmean</code> correctly ignores simulations where no triple-hit occurred (which returns <code>np.nan</code>), avoiding the misleading anchor of treating "no qualifying events" as a zero probability.</p></div></main>
+</main>
 </body>
 </html>

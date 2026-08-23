@@ -11559,7 +11559,9 @@ Here's a sample of 1001 numbers. Plot the CDF of this sample. Does it look like 
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>For a true Uniform$(0, 1)$ random variable, the CDF is $F(x) = x$ for $x \in [0,1]$ — a straight line with slope 1. The empirical CDF of a large sample from <code>np.random.random</code> should therefore look like a diagonal line.</p>
+<p>What you actually see is a staircase that hugs the diagonal closely. The deviations from perfect linearity are finite-sample noise: by the Kolmogorov-Smirnov (KS) statistic, the maximum deviation between $F_n$ and $F$ is $O(n^{-1/2})$, so with $n = 1001$ you expect random wiggles of order $\pm 0.03$. Visually, the CDF plot is an informal KS test — you are asking whether the staircase stays within the expected noise envelope around the diagonal.</p>
+<p>This exercise embeds a critical habit of mind: using the CDF to check a model assumption (uniformity) non-parametrically. The same technique generalises: plot the empirical CDF against any theoretical CDF and deviations reveal where the model fails. The hidden assumption is that successive outputs of <code>np.random.random</code> are independent; dependence would not necessarily appear in the CDF plot but would show up in lag-correlation plots or runs tests.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11574,8 +11576,6 @@ Here's a sample of 1001 numbers. Plot the CDF of this sample. Does it look like 
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>For a true Uniform$(0, 1)$ random variable, the CDF is $F(x) = x$ for $x \in [0,1]$ — a straight line with slope 1. The empirical CDF of a large sample from <code>np.random.random</code> should therefore look like a diagonal line.</p>
-<p>What you actually see is a staircase that hugs the diagonal closely. The deviations from perfect linearity are finite-sample noise: by the Kolmogorov-Smirnov (KS) statistic, the maximum deviation between $F_n$ and $F$ is $O(n^{-1/2})$, so with $n = 1001$ you expect random wiggles of order $\pm 0.03$. Visually, the CDF plot is an informal KS test — you are asking whether the staircase stays within the expected noise envelope around the diagonal.</p>
-<p>This exercise embeds a critical habit of mind: using the CDF to check a model assumption (uniformity) non-parametrically. The same technique generalises: plot the empirical CDF against any theoretical CDF and deviations reveal where the model fails. The hidden assumption is that successive outputs of <code>np.random.random</code> are independent; dependence would not necessarily appear in the CDF plot but would show up in lag-correlation plots or runs tests.</p></div></main>
+</main>
 </body>
 </html>

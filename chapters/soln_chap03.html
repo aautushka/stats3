@@ -10951,7 +10951,11 @@ Make a <code>Pmf</code> of the values in this column.</p>
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The class size paradox is a general consequence of size-biased sampling. When you sample units that belong to groups, and larger groups contribute more units to the sample, you systematically over-represent large groups. Here the groups are households and the sampled units are the children within them: a household with 4 children contributes 4 potential survey respondents, while a household with 1 child contributes only 1, and a household with 0 children contributes none at all.</p>
+<p>The <code>bias</code> function implements this analytically. If $P(k)$ is the actual probability that a randomly chosen respondent's household has $k$ children, then the probability a randomly chosen child reports $k$ household members is:</p>
+<p>$$P_{\text{biased}}(k) = \frac{k \cdot P(k)}{\sum_j j \cdot P(j)} = \frac{k \cdot P(k)}{E[X]}$$</p>
+<p>In code, <code>pmf.ps * pmf.qs</code> computes the unnormalized weight $k \cdot P(k)$ for each $k$; dividing by their sum (via <code>normalize()</code>) yields the biased probabilities. Notice that $k = 0$ always contributes zero weight, so the 3,563 respondents with no children under 18 vanish entirely from the biased distribution — they are structurally invisible to a child survey.</p>
+<p>The means shift from approximately 1.02 (actual) to 2.40 (biased), a factor of roughly 2.4. This is not a sampling error in the statistical sense but a systematic structural effect: any survey methodology that recruits respondents through group membership rather than directly from the population of groups will produce this inflation. The key hidden assumption in the <code>bias</code> calculation is that every child in a household is equally likely to be selected — if, for example, only the oldest child were surveyed, the weighting would differ.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10966,10 +10970,6 @@ Make a <code>Pmf</code> of the values in this column.</p>
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The class size paradox is a general consequence of size-biased sampling. When you sample units that belong to groups, and larger groups contribute more units to the sample, you systematically over-represent large groups. Here the groups are households and the sampled units are the children within them: a household with 4 children contributes 4 potential survey respondents, while a household with 1 child contributes only 1, and a household with 0 children contributes none at all.</p>
-<p>The <code>bias</code> function implements this analytically. If $P(k)$ is the actual probability that a randomly chosen respondent's household has $k$ children, then the probability a randomly chosen child reports $k$ household members is:</p>
-<p>$$P_{\text{biased}}(k) = \frac{k \cdot P(k)}{\sum_j j \cdot P(j)} = \frac{k \cdot P(k)}{E[X]}$$</p>
-<p>In code, <code>pmf.ps * pmf.qs</code> computes the unnormalized weight $k \cdot P(k)$ for each $k$; dividing by their sum (via <code>normalize()</code>) yields the biased probabilities. Notice that $k = 0$ always contributes zero weight, so the 3,563 respondents with no children under 18 vanish entirely from the biased distribution — they are structurally invisible to a child survey.</p>
-<p>The means shift from approximately 1.02 (actual) to 2.40 (biased), a factor of roughly 2.4. This is not a sampling error in the statistical sense but a systematic structural effect: any survey methodology that recruits respondents through group membership rather than directly from the population of groups will produce this inflation. The key hidden assumption in the <code>bias</code> calculation is that every child in a household is equally likely to be selected — if, for example, only the oldest child were surveyed, the weighting would differ.</p></div></main>
+</main>
 </body>
 </html>

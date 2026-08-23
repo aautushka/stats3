@@ -11569,7 +11569,11 @@ How does the pseudo $R^2$ value compare to the other models?</p>
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Logistic regression is repurposed here as a <strong>quantitative index of sexual dimorphism</strong>: if physical measurements can predict sex reliably, the species is more dimorphic; if they cannot, it is less so. The pseudo $R^2$ from McFadden's formula serves as that index because it measures how much better the fitted model is than a trivial intercept-only model (which always predicts the majority sex).</p>
+<p>The formula <code>"y ~ mass + flipper_length + culmen_length + culmen_depth"</code> uses all four morphometric variables simultaneously. MLE estimates coefficients for each predictor on the log-odds scale. The resulting pseudo $R^2 = 0.686$ for Chinstrap penguins is very high (compare to near-zero for the maternal-age model in Exercise 11.2, where the predictor was irrelevant). This indicates that the four measurements together almost perfectly discriminate male from female Chinstrap penguins. Individual $p$-values reveal that <code>culmen_length</code> ($p = 0.006$) and <code>culmen_depth</code> ($p = 0.012$) carry most of the discriminating power, while <code>mass</code> and <code>flipper_length</code> are not individually significant given the others are in the model — a classic sign of <strong>multicollinearity</strong> among morphometric variables.</p>
+<p>The comparison across species is informal here: to formally test whether Chinstrap dimorphism differs from Adelie or Gentoo, one would need a single model with species as a categorical variable, or a likelihood-ratio test between species-specific models. The pseudo $R^2$ comparison is a useful heuristic but not a statistical test.</p>
+<hr/>
+<p>File written to: <code>/Users/anton/proj/bayes2/chap11_commentary.md</code></p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e27da3a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11584,10 +11588,6 @@ How does the pseudo $R^2$ value compare to the other models?</p>
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Logistic regression is repurposed here as a <strong>quantitative index of sexual dimorphism</strong>: if physical measurements can predict sex reliably, the species is more dimorphic; if they cannot, it is less so. The pseudo $R^2$ from McFadden's formula serves as that index because it measures how much better the fitted model is than a trivial intercept-only model (which always predicts the majority sex).</p>
-<p>The formula <code>"y ~ mass + flipper_length + culmen_length + culmen_depth"</code> uses all four morphometric variables simultaneously. MLE estimates coefficients for each predictor on the log-odds scale. The resulting pseudo $R^2 = 0.686$ for Chinstrap penguins is very high (compare to near-zero for the maternal-age model in Exercise 11.2, where the predictor was irrelevant). This indicates that the four measurements together almost perfectly discriminate male from female Chinstrap penguins. Individual $p$-values reveal that <code>culmen_length</code> ($p = 0.006$) and <code>culmen_depth</code> ($p = 0.012$) carry most of the discriminating power, while <code>mass</code> and <code>flipper_length</code> are not individually significant given the others are in the model — a classic sign of <strong>multicollinearity</strong> among morphometric variables.</p>
-<p>The comparison across species is informal here: to formally test whether Chinstrap dimorphism differs from Adelie or Gentoo, one would need a single model with species as a categorical variable, or a likelihood-ratio test between species-specific models. The pseudo $R^2$ comparison is a useful heuristic but not a statistical test.</p>
-<hr/>
-<p>File written to: <code>/Users/anton/proj/bayes2/chap11_commentary.md</code></p></div></main>
+</main>
 </body>
 </html>

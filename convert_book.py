@@ -402,7 +402,14 @@ def _fuzzy_hit(word: str, text_words: set[str]) -> bool:
     if word in text_words:
         return True
     prefix = word[:5]
-    return any(len(w) >= 4 and w[:5] == prefix for w in text_words)
+    for w in text_words:
+        if len(w) < 4:
+            continue
+        if w[:5] == prefix:
+            return True
+        if len(word) >= 4 and w[:len(word)] == word:
+            return True
+    return False
 
 
 def _precision(exercise_words: list[str], heading_words: list[str]) -> float:
@@ -424,6 +431,28 @@ def _cell_ancestor(tag) -> object:
             return p
         el = p
     return el
+
+
+def _exercise_match_text(para) -> str:
+    """Return text for matching: full cell text, extended into following cells when short."""
+    cell = _cell_ancestor(para)
+    text = cell.get_text()
+    if len(text) >= 200:
+        return text[:800]
+    for sib in cell.find_next_siblings():
+        sib_cls = ' '.join(sib.get('class') or [])
+        if 'jp-MarkdownCell' in sib_cls:
+            if any(p.get_text(strip=True).lower().startswith('exercise')
+                   and len(p.get_text(strip=True)) > 20
+                   for p in sib.find_all('p')):
+                break
+            text += ' ' + sib.get_text()
+        elif 'jp-CodeCell' in sib_cls:
+            text += ' ' + sib.get_text()
+            break
+        if len(text) >= 800:
+            break
+    return text[:800]
 
 
 def _make_block(content: str, soup, md_lib) -> object:
@@ -512,7 +541,6 @@ def inject_commentary(html_path: Path, md_path: Path):
 
         for idx in sorted(matches):
             cell, _ = ex_cells[idx]
-            # Insert before the next exercise's markdown cell
             insert_before = None
             for sib in cell.find_next_siblings():
                 if any(_is_exercise_h3(h) for h in sib.find_all('h3')):
@@ -522,7 +550,17 @@ def inject_commentary(html_path: Path, md_path: Path):
             if insert_before:
                 insert_before.insert_before(block)
             else:
-                cell.parent.append(block)
+                insert_after = cell
+                for sib in cell.find_next_siblings():
+                    sib_cls = ' '.join(sib.get('class') or [])
+                    if 'jp-CodeCell' in sib_cls:
+                        insert_after = sib
+                    elif 'jp-MarkdownCell' in sib_cls:
+                        if any(_is_exercise_h3(h) for h in sib.find_all('h3')):
+                            break
+                    else:
+                        break
+                insert_after.insert_after(block)
             injected += 1
 
     else:
@@ -535,12 +573,12 @@ def inject_commentary(html_path: Path, md_path: Path):
             return
 
         all_scores: list[tuple[float, int, int]] = []
-        for sec_idx, (mw, sec_content) in enumerate(ex_sections):
+        for sec_idx, (mw, _) in enumerate(ex_sections):
             hw = _heading_keywords(mw)
             if not hw:
                 continue
             for para_idx, para in enumerate(ex_paras):
-                s = _precision(_norm(para.get_text()[:800]), mw)
+                s = _precision(_norm(_exercise_match_text(para)), mw)
                 if s >= 0.15:
                     all_scores.append((s, sec_idx, para_idx))
         all_scores.sort(reverse=True)
@@ -571,12 +609,110 @@ def inject_commentary(html_path: Path, md_path: Path):
             if insert_before:
                 insert_before.insert_before(block)
             else:
-                cell.parent.append(block)
+                insert_after = cell
+                for sib in cell.find_next_siblings():
+                    sib_cls = ' '.join(sib.get('class') or [])
+                    if 'jp-CodeCell' in sib_cls:
+                        insert_after = sib
+                    elif 'jp-MarkdownCell' in sib_cls:
+                        if any(p.get_text(strip=True).lower().startswith('exercise')
+                               and len(p.get_text(strip=True)) > 20
+                               for p in sib.find_all('p')):
+                            break
+                    else:
+                        break
+                insert_after.insert_after(block)
             injected += 1
 
     if injected > 0:
         html_path.write_text(str(soup), encoding="utf-8")
         print(f"  injected {injected} commentary blocks", flush=True)
+
+
+def verify_chapter(raw_html: Path, html_path: Path, key: str):
+    """Hard assertions after all HTML transformations.
+
+    1. No code cells lost vs raw.
+    2. Every exercise has a commentary block (soln_ chapters only).
+    3. Commentary always comes after solution code, never before it.
+    """
+    from bs4 import BeautifulSoup
+
+    def _count_cls(path: Path, cls: str) -> int:
+        soup = BeautifulSoup(path.read_text(encoding='utf-8'), 'html.parser')
+        return len([d for d in soup.find_all('div') if cls in ' '.join(d.get('class') or [])])
+
+    raw_code = _count_cls(raw_html,  'jp-CodeCell')
+    pat_code = _count_cls(html_path, 'jp-CodeCell')
+    if raw_code != pat_code:
+        raise AssertionError(
+            f"{key}: CONTENT LOST — raw has {raw_code} code cells, patched has {pat_code}"
+        )
+
+    if not key.startswith('soln_'):
+        return
+
+    soup = BeautifulSoup(html_path.read_text(encoding='utf-8'), 'html.parser')
+
+    # Detect exercise format
+    ex_h3s = [h for h in soup.find_all('h3') if _is_exercise_h3(h)]
+    if ex_h3s:
+        n_ex = len(ex_h3s)
+    else:
+        n_ex = len([p for p in soup.find_all('p')
+                    if p.get_text(strip=True).lower().startswith('exercise')
+                    and len(p.get_text(strip=True)) > 20])
+
+    n_com = len(soup.find_all('div', class_='commentary-block'))
+    if n_com != n_ex:
+        raise AssertionError(
+            f"{key}: COMMENTARY MISSING — {n_ex} exercises but {n_com} commentary blocks"
+        )
+
+    # Ordering: EX…[CODE*]…COM — COM must not appear before solution code
+    main = soup.find('main') or soup.find('body')
+    events: list[str] = []
+    for tag in (main or soup).descendants:
+        if ex_h3s:
+            if _is_exercise_h3(tag):
+                events.append('EX')
+        else:
+            if tag.name == 'p':
+                t = tag.get_text(strip=True)
+                if t.lower().startswith('exercise') and len(t) > 20:
+                    events.append('EX')
+        if tag.name == 'div':
+            cls = ' '.join(tag.get('class') or [])
+            if 'commentary-block' in cls:
+                events.append('COM')
+            elif 'jp-CodeCell' in cls:
+                events.append('CODE')
+
+    ex_count = com_count = 0
+    com_seen = code_after_com = False
+    for ev in events:
+        if ev == 'EX':
+            if com_count < ex_count:
+                raise AssertionError(
+                    f"{key}: ORDER WRONG — exercise #{ex_count+1} has no commentary before next exercise"
+                )
+            if code_after_com:
+                raise AssertionError(
+                    f"{key}: PLACEMENT WRONG — commentary #{com_count} appears before solution code"
+                )
+            ex_count += 1
+            com_seen = False
+            code_after_com = False
+        elif ev == 'CODE':
+            if com_seen:
+                code_after_com = True
+        else:
+            com_seen = True
+            com_count += 1
+    if ex_count > 0 and com_count < ex_count:
+        raise AssertionError(f"{key}: ORDER WRONG — last exercise has no commentary")
+    if code_after_com:
+        raise AssertionError(f"{key}: PLACEMENT WRONG — last commentary appears before solution code")
 
 
 def header_template(label: str) -> str:
@@ -763,6 +899,7 @@ def process_notebook(key: str, nb_url: str, nb_path: Path,
     split_wide_tables(html_path)
     if commentary_md is not None:
         inject_commentary(html_path, commentary_md)
+    verify_chapter(raw_html, html_path, key)
 
     # ── step 3: HTML → PDF ────────────────────────────────────────────────────
     # Cache is valid only while raw HTML is older than the PDF.

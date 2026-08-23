@@ -10664,7 +10664,11 @@ How do you interpret the result?</p>
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise asks whether a Pearson correlation of 0.256 between culmen depth and culmen length in female Chinstrap penguins is consistent with the null hypothesis of no linear association.</p>
+<p><code>abs_correlation</code> calls <code>np.corrcoef(xs, ys)[0, 1]</code>, which computes Pearson's $r = \frac{\sum_i (x_i - \bar{x})(y_i - \bar{y})}{(n-1)\,s_x\,s_y}$. Taking the absolute value again makes the test agnostic to the direction of any linear relationship.</p>
+<p>The <code>permute</code> function simulates the null hypothesis by shuffling only the $x$ values (culmen depths) while leaving the $y$ values (culmen lengths) in their original order. This destroys every pairing between a specific bird's depth and that same bird's length, which is precisely what the null hypothesis claims: depth and length are independent, so knowing one tells you nothing about the other. The asymmetry — shuffling $x$ but not $y$ — is immaterial; shuffling either variable, or both, equally destroys the pairwise structure. The resulting null distribution is the set of correlations you would see in data with no real association.</p>
+<p>With 1001 simulations, <code>compute_p_value</code> returns approximately 0.14, meaning about 14% of null-hypothesis datasets produced a correlation at least as large as 0.256. This is not small enough to rule out chance as an explanation.</p>
+<p>An important hidden assumption is that Pearson's $r$ measures only <strong>linear</strong> dependence. If the true relationship between culmen depth and length were curved or monotone but nonlinear, Pearson's $r$ would understate it, and this test would have low power to detect it. A rank-based test statistic (Spearman's $\rho$) inside the same permutation loop would be more sensitive to monotone relationships without requiring normality. The permutation framework itself remains valid either way — only the test statistic needs to change.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30cbf7f1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10679,10 +10683,6 @@ How do you interpret the result?</p>
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise asks whether a Pearson correlation of 0.256 between culmen depth and culmen length in female Chinstrap penguins is consistent with the null hypothesis of no linear association.</p>
-<p><code>abs_correlation</code> calls <code>np.corrcoef(xs, ys)[0, 1]</code>, which computes Pearson's $r = \frac{\sum_i (x_i - \bar{x})(y_i - \bar{y})}{(n-1)\,s_x\,s_y}$. Taking the absolute value again makes the test agnostic to the direction of any linear relationship.</p>
-<p>The <code>permute</code> function simulates the null hypothesis by shuffling only the $x$ values (culmen depths) while leaving the $y$ values (culmen lengths) in their original order. This destroys every pairing between a specific bird's depth and that same bird's length, which is precisely what the null hypothesis claims: depth and length are independent, so knowing one tells you nothing about the other. The asymmetry — shuffling $x$ but not $y$ — is immaterial; shuffling either variable, or both, equally destroys the pairwise structure. The resulting null distribution is the set of correlations you would see in data with no real association.</p>
-<p>With 1001 simulations, <code>compute_p_value</code> returns approximately 0.14, meaning about 14% of null-hypothesis datasets produced a correlation at least as large as 0.256. This is not small enough to rule out chance as an explanation.</p>
-<p>An important hidden assumption is that Pearson's $r$ measures only <strong>linear</strong> dependence. If the true relationship between culmen depth and length were curved or monotone but nonlinear, Pearson's $r$ would understate it, and this test would have low power to detect it. A rank-based test statistic (Spearman's $\rho$) inside the same permutation loop would be more sensitive to monotone relationships without requiring normality. The permutation framework itself remains valid either way — only the test statistic needs to change.</p></div></main>
+</main>
 </body>
 </html>

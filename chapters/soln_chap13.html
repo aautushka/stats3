@@ -11775,7 +11775,14 @@ After about age 5, life expectancy returns to the pattern we expect -- young peo
 </div>
 </div>
 </div>
-</div>
+</div><div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise converts a digitised hazard function — age-specific mortality rates from an 1800s Swedish birth cohort — into a full lifetime distribution and then computes conditional remaining life expectancy at every age.</p>
+<p>The <code>make_hazard</code> function performs two non-obvious operations. First, it uses <code>scipy.interpolate.interp1d</code> to fill in integer ages between the sparse digitised data points; the <code>fill_value="extrapolate"</code> flag extends the fit linearly beyond the observed range, which is a strong assumption at extreme ages where mortality curves are poorly characterised. Second, it applies <code>np.exp</code> to the interpolated values. This implies the original data was stored on a log scale — a common practice because log-mortality is approximately linear in age (the Gompertz law: $\log h(t) \approx a + bt$), making interpolation in log-space more numerically stable than in probability space.</p>
+<p>The survival function is recovered via the Kaplan-Meier product formula implemented in <code>make_surv</code>:</p>
+<p>$$S(t) = \prod_{s \leq t} (1 - h(s))$$</p>
+<p>This is the discrete-time analogue of $S(t) = \exp!\left(-\int_0^t h(s)\,ds\right)$. Because the hazard values come from a model rather than empirical event counts, there is no sampling uncertainty in this step; the uncertainty all lives in the digitisation error and interpolation choices.</p>
+<p><code>make_cdf</code> gives $F(t) = 1 - S(t)$, and <code>make_pmf</code> converts this to the probability mass $P(T = t) = F(t) - F(t-1)$, which is the lifetime distribution treated as discrete in one-year bins.</p>
+<p>The remaining-lifetime calculation at age $t$ conditions on survival to $t$: it selects the tail ${s \geq t}$ of the lifetime PMF, shifts the time axis to zero, renormalises, and takes the mean. The key insight is that renormalisation is mandatory — the selected tail probabilities do not sum to 1 because they are unconditional; dividing by their sum implements Bayes' rule, converting $P(T = s)$ into $P(T = s \mid T \geq t)$.</p>
+<p>The counterintuitive rise in remaining life expectancy during the first few years of life is a direct consequence of the selection effect of surviving infant mortality. Formally, $E[T - t \mid T \geq t]$ can increase in $t$ whenever the hazard decreases sharply — a survivor of the high-mortality infant years faces a suddenly lower hazard going forward, more than compensating for the time already consumed. This is the discrete analogue of the inspection paradox and is a clean example of how conditioning on survival changes the effective distribution an analyst is working with.</p></div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e216ffb1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11790,13 +11797,6 @@ After about age 5, life expectancy returns to the pattern we expect -- young peo
 </div>
 </div>
 </div>
-<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise converts a digitised hazard function — age-specific mortality rates from an 1800s Swedish birth cohort — into a full lifetime distribution and then computes conditional remaining life expectancy at every age.</p>
-<p>The <code>make_hazard</code> function performs two non-obvious operations. First, it uses <code>scipy.interpolate.interp1d</code> to fill in integer ages between the sparse digitised data points; the <code>fill_value="extrapolate"</code> flag extends the fit linearly beyond the observed range, which is a strong assumption at extreme ages where mortality curves are poorly characterised. Second, it applies <code>np.exp</code> to the interpolated values. This implies the original data was stored on a log scale — a common practice because log-mortality is approximately linear in age (the Gompertz law: $\log h(t) \approx a + bt$), making interpolation in log-space more numerically stable than in probability space.</p>
-<p>The survival function is recovered via the Kaplan-Meier product formula implemented in <code>make_surv</code>:</p>
-<p>$$S(t) = \prod_{s \leq t} (1 - h(s))$$</p>
-<p>This is the discrete-time analogue of $S(t) = \exp!\left(-\int_0^t h(s)\,ds\right)$. Because the hazard values come from a model rather than empirical event counts, there is no sampling uncertainty in this step; the uncertainty all lives in the digitisation error and interpolation choices.</p>
-<p><code>make_cdf</code> gives $F(t) = 1 - S(t)$, and <code>make_pmf</code> converts this to the probability mass $P(T = t) = F(t) - F(t-1)$, which is the lifetime distribution treated as discrete in one-year bins.</p>
-<p>The remaining-lifetime calculation at age $t$ conditions on survival to $t$: it selects the tail ${s \geq t}$ of the lifetime PMF, shifts the time axis to zero, renormalises, and takes the mean. The key insight is that renormalisation is mandatory — the selected tail probabilities do not sum to 1 because they are unconditional; dividing by their sum implements Bayes' rule, converting $P(T = s)$ into $P(T = s \mid T \geq t)$.</p>
-<p>The counterintuitive rise in remaining life expectancy during the first few years of life is a direct consequence of the selection effect of surviving infant mortality. Formally, $E[T - t \mid T \geq t]$ can increase in $t$ whenever the hazard decreases sharply — a survivor of the high-mortality infant years faces a suddenly lower hazard going forward, more than compensating for the time already consumed. This is the discrete analogue of the inspection paradox and is a clean example of how conditioning on survival changes the effective distribution an analyst is working with.</p></div></main>
+</main>
 </body>
 </html>
