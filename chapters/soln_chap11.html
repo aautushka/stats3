@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8019,7 +8018,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8130,6 +8128,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -9269,11 +9417,6 @@ We can use multiple regression to test this conjecture, by estimating the differ
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/anton/proj/stats3/chapters/nsfg.py:220: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  df["totalwgt_lb"] = df.birthwgt_lb + df.birthwgt_oz / 16.0
-</pre>
-</div>
 </div>
 </div>
 </div>
@@ -10989,7 +11132,12 @@ What if you control for the mother's age -- does maternal age account for some o
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9069a93c">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The formula <code>"totalwgt_lb ~ C(babysex)"</code> illustrates how Patsy handles categorical predictors. The <code>C()</code> operator tells the model to dummy-encode <code>babysex</code>: it picks one value as the <strong>reference level</strong> (boys, coded 1, because it is the numerically smaller value) and creates one indicator column for the other category (girls, coded 2). The model then fits</p>
+<p>$$\hat{w} = \beta_0 + \beta_1 \cdot \mathbf{1}[\text{girl}]$$</p>
+<p>so $\beta_0$ is the estimated mean weight for boys and $\beta_1$ is the estimated difference girls minus boys. The coefficient <code>C(babysex)[T.2.0] = -0.296</code> means girls are about 0.30 lb lighter. The $t$-statistic of $-10.04$ is computed as $\hat{\beta}_1 / \widehat{\text{SE}}(\hat{\beta}_1)$ and is compared against a $t$ distribution with $n - 2$ degrees of freedom; the resulting $p$-value is effectively zero, so the difference is far beyond what chance variation would produce under the null.</p>
+<p>Adding <code>agepreg</code> and then <code>agepreg2</code> to the formula introduces the idea of <strong>control variables</strong>. When the model includes maternal age, OLS finds the coefficient on <code>babysex</code> that explains variation in birth weight <em>after removing the linear trend with age</em>. Because the <code>babysex</code> coefficient barely moves ($-0.296 \to -0.295 \to -0.297$) and the $R^2$ increment is modest, the exercise demonstrates that maternal age is not a confound — it is independently predictive of weight but does not mediate the sex difference.</p>
+<p>The quadratic term <code>agepreg2</code> is not constructed by Patsy syntax here; it is pre-computed as a column in the DataFrame. This approach sidesteps the <code>I(agepreg**2)</code> Patsy idiom but requires care: the squared column and the linear column are highly correlated, inflating standard errors. The statistically significant quadratic term tells us the age–weight relationship curves (weight peaks at intermediate maternal ages), but this does not change the sex-gap estimate.</p>
+<p>Hidden assumptions: OLS requires that residuals are independent, have constant variance across values of the predictors (homoskedasticity), and are approximately normally distributed. With NSFG survey data, births are clustered within mothers and the survey uses a complex sampling design; both violations bias the reported standard errors downward. The $p$-values here should be read as approximate.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9069a93c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11161,7 +11309,11 @@ What if you use a quadratic model of maternal age?</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10888cd5">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Because the outcome is binary (boy or girl), OLS is inappropriate — it can produce predicted probabilities outside $[0, 1]$ and has systematically non-constant variance. Logistic regression solves this by modelling the <strong>log-odds</strong>:</p>
+<p>$$\log \frac{P(\text{boy})}{1 - P(\text{boy})} = \beta_0 + \beta_1 \cdot \text{agepreg}$$</p>
+<p>The <code>smf.logit()</code> call estimates $\beta_0$ and $\beta_1$ by <strong>maximum likelihood</strong>, not OLS. The likelihood is the probability of the observed 0/1 sequence under the logistic model; MLE finds the parameter values that maximise it. Because there is no closed-form solution, an iterative algorithm (IRLS) is used internally. Consequently, inference uses a <strong>$z$-statistic</strong> (Wald statistic), $z = \hat{\beta} / \widehat{\text{SE}}(\hat{\beta})$, compared against a standard normal, rather than the $t$-statistic from OLS.</p>
+<p>The recoding step <code>valid["y"] = (valid["babysex"] == 1).astype(int)</code> is essential: the logit model requires the response to be 0 or 1. The original encoding (1 = boy, 2 = girl) would be accepted numerically but would be meaningless — the model would predict the probability of having a value of 1 vs. 2, which is not a coherent probability.</p>
+<p>The <strong>pseudo $R^2$</strong> shown in the output is McFadden's statistic, $1 - \mathcal{L}<em>{\text{model}} / \mathcal{L}</em>{\text{null}}$, where the likelihoods are on the log scale. It is not directly comparable to OLS $R^2$ but values near zero indicate the model explains almost nothing beyond the intercept. Here pseudo $R^2 \approx 0.00001$: maternal age accounts for essentially none of the variation in infant sex, consistent with the near-zero, high-$p$-value coefficient on <code>agepreg</code>. The quadratic formula in the solution accidentally repeats <code>agepreg + agepreg</code> rather than adding <code>agepreg2</code>, so the output is identical to the linear model — a subtle copy-paste error that produces the same result.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10888cd5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11296,7 +11448,11 @@ Generate and plot predictions for a range of flipper lengths, for male and femal
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1206873f">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The formula <code>"mass ~ flipper_length + culmen_depth + C(Sex)"</code> combines two continuous predictors with one binary categorical predictor. OLS fits:</p>
+<p>$$\hat{m} = \beta_0 + \beta_1 \cdot \text{flipper} + \beta_2 \cdot \text{depth} + \beta_3 \cdot \mathbf{1}[\text{MALE}]$$</p>
+<p>The coefficient <code>C(Sex)[T.MALE] = 505.5</code> is the estimated mass difference between males and females <strong>holding flipper length and culmen depth constant</strong>. This is the crucial distinction from a simple comparison of group means: because male penguins also have longer flippers and deeper bills on average, a naive male-minus-female mean would mix the sex effect with those morphological differences. Multiple regression partitions the variance algebraically so $\beta_3$ captures only the sex contribution that is orthogonal to the other predictors.</p>
+<p>The prediction block constructs a synthetic <code>DataFrame</code> with <code>flipper_length</code> swept across its observed range and <code>culmen_depth</code> pinned to its sample mean, then calls <code>result.predict(df)</code> twice — once with <code>Sex = "MALE"</code> and once with <code>Sex = "FEMALE"</code>. Because the model has no interaction terms, the male and female prediction lines are parallel; the vertical gap between them is exactly $\hat{\beta}_3 = 505.5$ g at every flipper length. If you wanted the gap to vary with flipper length, you would add the interaction term <code>flipper_length:C(Sex)</code> to the formula. The $R^2 = 0.61$ shows this three-predictor model explains about 61% of the variance in Adelie penguin mass — a substantial improvement over a single-predictor model.</p>
+<p>A hidden assumption in this additive model is <strong>no interaction between sex and the continuous predictors</strong>. If male penguins gain mass faster per millimetre of flipper than females do, the parallel-lines model is misspecified and $\hat{\beta}_3$ is an average of a sex gap that actually varies.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1206873f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11428,6 +11584,10 @@ How does the pseudo $R^2$ value compare to the other models?</p>
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Logistic regression is repurposed here as a <strong>quantitative index of sexual dimorphism</strong>: if physical measurements can predict sex reliably, the species is more dimorphic; if they cannot, it is less so. The pseudo $R^2$ from McFadden's formula serves as that index because it measures how much better the fitted model is than a trivial intercept-only model (which always predicts the majority sex).</p>
+<p>The formula <code>"y ~ mass + flipper_length + culmen_length + culmen_depth"</code> uses all four morphometric variables simultaneously. MLE estimates coefficients for each predictor on the log-odds scale. The resulting pseudo $R^2 = 0.686$ for Chinstrap penguins is very high (compare to near-zero for the maternal-age model in Exercise 11.2, where the predictor was irrelevant). This indicates that the four measurements together almost perfectly discriminate male from female Chinstrap penguins. Individual $p$-values reveal that <code>culmen_length</code> ($p = 0.006$) and <code>culmen_depth</code> ($p = 0.012$) carry most of the discriminating power, while <code>mass</code> and <code>flipper_length</code> are not individually significant given the others are in the model — a classic sign of <strong>multicollinearity</strong> among morphometric variables.</p>
+<p>The comparison across species is informal here: to formally test whether Chinstrap dimorphism differs from Adelie or Gentoo, one would need a single model with species as a categorical variable, or a likelihood-ratio test between species-specific models. The pseudo $R^2$ comparison is a useful heuristic but not a statistical test.</p>
+<hr/>
+<p>File written to: <code>/Users/anton/proj/bayes2/chap11_commentary.md</code></p></div></main>
 </body>
 </html>

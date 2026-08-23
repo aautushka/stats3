@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8017,6 +8016,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -11263,7 +11412,12 @@ dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09a8633d">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The exercise constructs a survival function for marriage duration, where the "event" is divorce. Two populations must be separated before calling <code>estimate_hazard</code>: <em>complete</em> cases (respondents whose first marriage ended in a divorce recorded in the data) and <em>ongoing</em> cases (respondents still in their first marriage at the time of interview).</p>
+<p>For complete cases, the duration is $(\texttt{cmdivorcx} - \texttt{cmmarrhx}) / 12$, converting century-months to years. No censoring applies here — the event was observed. The <code>dropna</code> behaviour inside <code>estimate_hazard</code> is therefore critical: rows where <code>cmdivorcx</code> is <code>NaN</code> (marriages that did not end in divorce) must not leak into the complete sequence. In the raw data both divorced and still-married respondents are present, so simply subtracting columns without filtering would silently pollute the complete set with <code>NaN</code>-difference rows that <code>FreqTab.from_seq</code> would then ignore — harmless only because pandas drops <code>NaN</code> from value counts, but fragile if the implementation changed.</p>
+<p>For ongoing cases the selection <code>fmarno == 1 and rmarital == 1</code> isolates respondents who have married exactly once and are currently married. Their duration is time-from-marriage to interview, which is a right-censored observation: all we know is that the divorce (if it ever occurs) must happen after this duration. Kaplan-Meier uses these observations by adding them to the at-risk denominator at every age up to their censoring time without incrementing the event numerator — formally,</p>
+<p>$$\hat{h}(t) = \frac{d_t}{n_t}$$</p>
+<p>where $d_t$ is the number of divorces at duration $t$ and $n_t$ is the number of marriages still intact and under observation just before $t$, including both the censored ongoing marriages and those that later divorced.</p>
+<p>The cumulative hazard $\sum_t \hat{h}(t)$ is steepest in roughly years 2–10, identifying the window of highest divorce risk. The survival curve flattens near 0.5, which is consistent with the often-quoted "50% of marriages end in divorce" figure — but note that this estimate is population-averaged across all cohorts and conditioning on marriage occurring at all; the optional cohort breakdown reveals that the 1940s cohort has markedly lower divorce rates than later cohorts, so the aggregate statistic conceals substantial generational heterogeneity. A hidden assumption throughout is that the censoring mechanism is non-informative: respondents who happen to be surveyed early in their marriage are not systematically different from those surveyed later, which is plausible given the survey design but worth acknowledging.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09a8633d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11636,6 +11790,13 @@ After about age 5, life expectancy returns to the pattern we expect -- young peo
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise converts a digitised hazard function — age-specific mortality rates from an 1800s Swedish birth cohort — into a full lifetime distribution and then computes conditional remaining life expectancy at every age.</p>
+<p>The <code>make_hazard</code> function performs two non-obvious operations. First, it uses <code>scipy.interpolate.interp1d</code> to fill in integer ages between the sparse digitised data points; the <code>fill_value="extrapolate"</code> flag extends the fit linearly beyond the observed range, which is a strong assumption at extreme ages where mortality curves are poorly characterised. Second, it applies <code>np.exp</code> to the interpolated values. This implies the original data was stored on a log scale — a common practice because log-mortality is approximately linear in age (the Gompertz law: $\log h(t) \approx a + bt$), making interpolation in log-space more numerically stable than in probability space.</p>
+<p>The survival function is recovered via the Kaplan-Meier product formula implemented in <code>make_surv</code>:</p>
+<p>$$S(t) = \prod_{s \leq t} (1 - h(s))$$</p>
+<p>This is the discrete-time analogue of $S(t) = \exp!\left(-\int_0^t h(s)\,ds\right)$. Because the hazard values come from a model rather than empirical event counts, there is no sampling uncertainty in this step; the uncertainty all lives in the digitisation error and interpolation choices.</p>
+<p><code>make_cdf</code> gives $F(t) = 1 - S(t)$, and <code>make_pmf</code> converts this to the probability mass $P(T = t) = F(t) - F(t-1)$, which is the lifetime distribution treated as discrete in one-year bins.</p>
+<p>The remaining-lifetime calculation at age $t$ conditions on survival to $t$: it selects the tail ${s \geq t}$ of the lifetime PMF, shifts the time axis to zero, renormalises, and takes the mean. The key insight is that renormalisation is mandatory — the selected tail probabilities do not sum to 1 because they are unconditional; dividing by their sum implements Bayes' rule, converting $P(T = s)$ into $P(T = s \mid T \geq t)$.</p>
+<p>The counterintuitive rise in remaining life expectancy during the first few years of life is a direct consequence of the selection effect of surviving infant mortality. Formally, $E[T - t \mid T \geq t]$ can increase in $t$ whenever the hazard decreases sharply — a survivor of the high-mortality infant years faces a suddenly lower hazard going forward, more than compensating for the time already consumed. This is the discrete analogue of the inspection paradox and is a clean example of how conditioning on survival changes the effective distribution an analyst is working with.</p></div></main>
 </body>
 </html>

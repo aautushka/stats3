@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8019,7 +8018,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8130,6 +8128,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -9926,11 +10074,6 @@ It returns three <code>DataFrame</code> objects.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/anton/proj/stats3/chapters/nsfg.py:220: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  df["totalwgt_lb"] = df.birthwgt_lb + df.birthwgt_oz / 16.0
-</pre>
-</div>
 </div>
 </div>
 </div>
@@ -10282,19 +10425,6 @@ Instructions for downloading the data are in the notebook for this chapter.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/anton/proj/stats3/chapters/nsfg.py:191: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  resp["agemarry"] = (resp.cmmarrhx - resp.cmbirth) / 12.0
-/Users/anton/proj/stats3/chapters/nsfg.py:192: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  resp["age"] = (resp.cmintvw - resp.cmbirth) / 12.0
-/Users/anton/proj/stats3/chapters/nsfg.py:195: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  resp["year"] = pd.DatetimeIndex(dates).year - 1900
-/Users/anton/proj/stats3/chapters/nsfg.py:196: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  resp["decade"] = resp.year // 10
-/Users/anton/proj/stats3/chapters/nsfg.py:197: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  resp["fives"] = resp.year // 5
-</pre>
-</div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
@@ -10508,7 +10638,9 @@ Are there any special values that should be replaced with <code>NaN</code>?</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=071ae7e7">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>FreqTab.from_seq</code> performs a simple frequency count: it groups identical values and records how many times each appears. This is the unnormalized form of a distribution — a map from each observed value to its raw count. Inspecting the <code>FreqTab</code> against the codebook reveals value 97, which is a sentinel code meaning "not ascertained" in NSFG documentation. Leaving 97 in place would silently corrupt every moment computed from the data: the mean would be inflated by nearly 100 for those rows, and variance and skewness would be dominated by this artifact rather than reflecting actual birth counts.</p>
+<p>Replacing 97 with <code>np.nan</code> is the correct fix because pandas and empiricaldist both propagate <code>NaN</code> as a missing value, excluding it automatically from <code>mean()</code>, <code>std()</code>, and probability normalization. <code>Pmf.from_seq</code> then divides each remaining frequency by the total count of non-missing observations, converting the <code>FreqTab</code> into a proper probability distribution where all probabilities sum to 1.</p>
+<p>The resulting bar chart shows right skew: the distribution has a hard lower bound at 0 (a respondent cannot have fewer than zero live births), but no corresponding upper bound compresses the right tail. Most mass sits at 0–2, with a rapidly thinning right tail extending to 22. This is the structural signature of non-negative count data — the left is truncated by a floor and the right tail is free to stretch. Right skew is visually confirmed when the tail on the high-value side is longer than the tail on the low-value side.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=071ae7e7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10644,7 +10776,12 @@ For example, here's how we compute the skewness of <code>numbabes</code>.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81e26051">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Skewness is the third standardized central moment:</p>
+<p>$$g_1 = \frac{E\left[(X - \mu)^3\right]}{\sigma^3}$$</p>
+<p>Cubing the deviations rather than squaring them is the key design choice. Variance uses squared deviations, which are always non-negative and cannot distinguish left from right asymmetry. Cubing preserves the sign of each deviation: large positive deviations (values well above the mean) contribute a large positive cube, and large negative deviations contribute a large negative cube. A right-skewed distribution has a few very large positive deviations that outweigh many small negative ones, so the numerator is positive and $g_1 &gt; 0$.</p>
+<p>The sample computation uses <code>ddof=0</code> to compute the biased (population-formula) standard deviation $\hat{\sigma} = \sqrt{\frac{1}{n}\sum(x_i - \bar{x})^2}$, which matches the denominator convention used in the formula above. Using <code>ddof=1</code> would give a slightly different value because the sample standard deviation and the skewness formula's denominator would no longer be on the same footing.</p>
+<p>The <code>pmf_skewness</code> function reexpresses the same computation in terms of the PMF's quantities (<code>pmf.qs</code>) and probabilities (<code>pmf.ps</code>). Instead of averaging over $n$ observations, it computes the probability-weighted expectation $\sum_k p_k (k - \mu)^3$ and then divides by $\sigma^3$. The two results agree exactly because <code>Pmf.from_seq</code> assigns each distinct value a probability of $\text{count}(k)/n$ — so the probability-weighted sum is algebraically identical to the sample average. This equivalence is worth pausing over: the PMF is not an approximation of the sample; it is the sample, re-expressed as a discrete probability measure.</p>
+<p>A hidden sensitivity: because deviations are cubed, a single extreme outlier has an outsized effect on skewness. The original value 97 (before replacement with <code>NaN</code>) would have produced a skewness statistic several orders of magnitude larger, illustrating why sentinel-value cleaning must precede any moment calculation.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81e26051">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10829,6 +10966,10 @@ Make a <code>Pmf</code> of the values in this column.</p>
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The class size paradox is a general consequence of size-biased sampling. When you sample units that belong to groups, and larger groups contribute more units to the sample, you systematically over-represent large groups. Here the groups are households and the sampled units are the children within them: a household with 4 children contributes 4 potential survey respondents, while a household with 1 child contributes only 1, and a household with 0 children contributes none at all.</p>
+<p>The <code>bias</code> function implements this analytically. If $P(k)$ is the actual probability that a randomly chosen respondent's household has $k$ children, then the probability a randomly chosen child reports $k$ household members is:</p>
+<p>$$P_{\text{biased}}(k) = \frac{k \cdot P(k)}{\sum_j j \cdot P(j)} = \frac{k \cdot P(k)}{E[X]}$$</p>
+<p>In code, <code>pmf.ps * pmf.qs</code> computes the unnormalized weight $k \cdot P(k)$ for each $k$; dividing by their sum (via <code>normalize()</code>) yields the biased probabilities. Notice that $k = 0$ always contributes zero weight, so the 3,563 respondents with no children under 18 vanish entirely from the biased distribution — they are structurally invisible to a child survey.</p>
+<p>The means shift from approximately 1.02 (actual) to 2.40 (biased), a factor of roughly 2.4. This is not a sampling error in the statistical sense but a systematic structural effect: any survey methodology that recruits respondents through group membership rather than directly from the population of groups will produce this inflation. The key hidden assumption in the <code>bias</code> calculation is that every child in a household is equally likely to be selected — if, for example, only the oldest child were surveyed, the weighting would differ.</p></div></main>
 </body>
 </html>

@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8019,7 +8018,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8130,6 +8128,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -8615,11 +8763,7 @@ Now let's see if that difference could be due to chance.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/anton/proj/stats3/chapters/nsfg.py:220: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  df["totalwgt_lb"] = df.birthwgt_lb + df.birthwgt_oz / 16.0
-</pre>
-</div>
+
 </div>
 </div>
 </div>

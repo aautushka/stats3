@@ -7906,6 +7906,156 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
+}
+</style>
 </head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
@@ -10959,7 +11109,9 @@ How well does the Poisson model fit the data?</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d2bf28f">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The Poisson distribution has PMF $P(K = k) = \frac{\lambda^k e^{-\lambda}}{k!}$, where $\lambda &gt; 0$ is both the mean and the variance of the distribution. It arises as the limiting case of the binomial when $n \to \infty$ and $p \to 0$ with $np = \lambda$ held fixed — in other words, it models the count of rare, independent events in a fixed exposure.</p>
+<p>The solution estimates $\lambda$ as the sample mean of <code>numfmhh</code> among respondents aged 25 and over, then evaluates <code>poisson_pmf</code> at every integer from 0 up to the observed maximum. This is a <strong>method-of-moments</strong> estimate: because the Poisson distribution has only one parameter and its first moment equals $\lambda$, setting $\hat\lambda = \bar{x}$ is simultaneously the method-of-moments estimator and the maximum-likelihood estimator.</p>
+<p>The key pedagogical tension here is <em>why</em> household size should follow a Poisson distribution at all. There is no obvious generative story analogous to goals-per-game or arrivals-per-hour. Household sizes are bounded, correlated across family members, and shaped by social and economic constraints that look nothing like independent rare events. Yet the Poisson model fits the data surprisingly well. This is a good example of the chapter's broader lesson: a model need not be mechanistically correct to be descriptively useful. The CDF comparison (using <code>pmf_family.make_cdf()</code> versus <code>pmf_poisson.make_cdf()</code>) is more revealing than the bar chart because it makes the tail behaviour visible — the data place more probability on households of size 1 than the Poisson predicts, and slightly less on mid-range values, but the overall agreement is close. One hidden assumption worth flagging: the Poisson model requires that the mean equals the variance. Real household-size data are almost certainly <strong>underdispersed</strong> (variance &lt; mean) because there is a hard floor at 1 person, which constrains the left tail in a way the Poisson does not respect.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d2bf28f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11130,7 +11282,9 @@ And if that's true, we expect the time between goals to follow an exponential di
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=82106650">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The exponential distribution with rate $\lambda$ has CDF $F(t) = 1 - e^{-\lambda t}$ and mean $1/\lambda$. Its defining property is <strong>memorylessness</strong>: the probability that the next goal arrives within the next $s$ seconds is the same regardless of how long it has been since the last goal. This is equivalent to saying goals arrive as a Poisson process — if the count in any interval follows Poisson($\lambda t$), then the waiting time between successive events is necessarily Exponential($\lambda$).</p>
+<p>The solution computes inter-goal gaps using <code>times.diff().dropna()</code>. <code>diff()</code> subtracts each element from the next, producing the sequence of successive differences; <code>dropna()</code> drops the first <code>NaN</code> that results from differencing the first element. The rate parameter is then estimated as $\hat\lambda = 1/\bar{x}$, the reciprocal of the sample mean — again the MLE for the exponential family, since the MLE sets $1/\hat\lambda = \bar{x}$.</p>
+<p>This exercise is a stronger test of the Poisson-process model than the first-goal exercise in the chapter body, because inter-goal times span the <em>entire</em> game, not just the opening minutes. If goals were clustered in time — say, because a power play creates a burst of attempts — we would expect the inter-arrival distribution to have a heavier right tail than exponential (overdispersion). The memorylessness assumption would also break down if scoring probability changes with game state (score differential, fatigue, pulled goaltender late in the game). The visual comparison of <code>cdf_expo</code> against <code>cdf_intervals</code> reveals whether these real-world complications produce systematic curvature away from the straight exponential form. The fact that the fit is described as "remarkably good" tells us the simple constant-rate model captures most of the variation, even if it cannot be literally true — a recurring theme in the chapter.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=82106650">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11321,6 +11475,8 @@ Based on a visual comparison, which model fits the data better?</p>
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise asks you to run the same two-stage diagnostic used in the chapter body for adult <em>weight</em> — compare the raw data to a Normal model, then compare the log-transformed data to a Normal model — but for adult <em>height</em>. The procedural steps are identical: <code>make_normal_model</code> fits a Normal($\mu$, $\sigma$) where $\mu = \bar{x}$ and $\sigma = s$ (the sample standard deviation), which are the MLEs for the normal family. The log transformation uses base 10, so $\log_{10}(\text{height in cm})$ values cluster around $\log_{10}(170) \approx 2.23$.</p>
+<p>The conceptual question is mechanistic: adult weight plausibly grows proportionally (a 1% calorie surplus adds more absolute mass to a heavier person), which leads to a lognormal distribution via the multiplicative version of the Central Limit Theorem — the product of many independent positive factors converges to lognormal just as a sum converges to normal. Height, by contrast, is driven by additive growth: bones lengthen by fixed amounts each year regardless of current stature, which suggests an additive CLT argument and a normal distribution.</p>
+<p>The solution's conclusion — that the two models fit about equally well, with the lognormal perhaps slightly better near the centre but the data having a heavier left tail than lognormal predicts — is itself informative. It tells us that the additive and multiplicative generating stories produce distributions that are nearly indistinguishable over the observable range of human heights, so CDF comparison alone cannot resolve the mechanistic question. This is a key caution: <strong>goodness-of-fit to a theoretical distribution does not confirm the underlying generative mechanism</strong>. The heavier-than-lognormal left tail is consistent with developmental constraints (minimum viable height) that truncate the lower end, a feature neither model captures.</p></div></main>
 </body>
 </html>

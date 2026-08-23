@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8019,7 +8018,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8130,6 +8128,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -10324,11 +10472,6 @@ We'll use the NSFG data again -- instructions for downloading it are in the note
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/anton/proj/stats3/chapters/nsfg.py:220: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  df["totalwgt_lb"] = df.birthwgt_lb + df.birthwgt_oz / 16.0
-</pre>
-</div>
 </div>
 </div>
 </div>
@@ -12105,7 +12248,10 @@ Then compute the sampling distribution of the difference and a 90% confidence in
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e7c008e">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The solution calls <code>sampling_dist_mean(data, n)</code> for each sex group separately, then subtracts the resulting <code>Normal</code> objects. Understanding each step is essential.</p>
+<p><code>sampling_dist_mean</code> does four things in two lines: it computes the sample mean $\bar{x}$ and variance $s^2$, wraps them into a <code>Normal(\bar{x}, s^2)</code> representing the population model, calls <code>.sum(n)</code> which returns <code>Normal(n\bar{x},\, n s^2)</code> (using the additive-variance rule for the sum of $n$ iid normals), and finally divides by $n$, giving <code>Normal(\bar{x},\, s^2/n)</code>. That last object is exactly the <strong>sampling distribution of the sample mean</strong>: centred on the true mean, with variance $\sigma^2/n$ — the familiar standard error formula $\text{SE} = \sigma/\sqrt{n}$ emerges automatically from the algebra of Normal objects.</p>
+<p>The subtraction <code>dist_male - dist_female</code> exploits a further closure property: if $X \sim \mathcal{N}(\mu_1, \sigma_1^2)$ and $Y \sim \mathcal{N}(\mu_2, \sigma_2^2)$ independently, then $X - Y \sim \mathcal{N}(\mu_1 - \mu_2,\, \sigma_1^2 + \sigma_2^2)$. Note that variances <strong>add</strong> even when computing a difference — the uncertainty from two independent estimates compounds. The 90% CI is then read off via <code>dist_diff.ppf([0.05, 0.95])</code>, which inverts the normal CDF to find the 5th and 95th percentiles.</p>
+<p>A critical hidden assumption: <code>sampling_dist_mean</code> uses the <strong>plug-in</strong> estimator — it treats $s^2$ as if it were the true population variance $\sigma^2$. This is valid when $n$ is large (both groups have over 70 Adelie penguins), but for small samples a $t$-distribution with $n-1$ degrees of freedom would be more appropriate. The exercise also assumes the two groups are independent samples, which is satisfied by design in the Palmer Penguins data.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e7c008e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12271,7 +12417,11 @@ Use the SciPy function <code>pearsonr</code> to check your results.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38991254">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The correlation between father's age (<code>hpagelb</code>) and birth weight (<code>totalwgt_lb</code>) is computed on complete cases only (<code>.dropna(subset=[...])</code>), then tested with <code>transform_correlation</code>, which applies the classical transformation:</p>
+<p>$$t = r\sqrt{\frac{n-2}{1-r^2}}$$</p>
+<p>This converts the sample Pearson correlation $r$ into a statistic that, under $H_0: \rho = 0$, follows a $t$-distribution with $n - 2$ degrees of freedom. The intuition: fitting a bivariate normal uses up 2 degrees of freedom (one for each marginal), leaving $n-2$ for the residuals. The transformation is monotone in $r$, so testing $t = 0$ is equivalent to testing $r = 0$.</p>
+<p>The p-value is computed as <code>student_t.cdf(-t_actual, df=n-2) * 2</code> — a two-sided test that asks: if the true correlation were zero, what fraction of samples would produce an absolute correlation at least this large? With $n = 8933$ and $r \approx 0.065$, the p-value is $\approx 9.4 \times 10^{-10}$, which is extremely significant despite the small effect size. This is a textbook illustration of the <strong>power problem</strong>: with nearly 9,000 observations even tiny correlations become detectable, so statistical significance here says almost nothing about practical importance.</p>
+<p>Key assumptions: the $t$-test for Pearson $r$ assumes bivariate normality and a linear relationship. Father's age in survey data is likely right-skewed, so normality may be mildly violated — though with $n \approx 9000$ the CLT makes the $t$ approximation robust. <code>pearsonr</code> from <code>scipy.stats</code> confirms the result to 15 significant figures, providing a useful sanity check.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38991254">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12747,7 +12897,11 @@ Hint: use the argument <code>axis=None</code> to treat the entire <code>DataFram
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f4d4102">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise applies the chi-squared goodness-of-fit test to a two-way count table. The observed counts are a 5×2 DataFrame (marital status × baby sex). The expected counts are constructed by multiplying the <strong>null-hypothesis marginal distribution</strong> of marital status — estimated from the full dataset — by each column total:</p>
+<p>$$E_{ij} = \hat{p}_i \cdot n_j$$</p>
+<p>where $\hat{p}_i$ is the overall proportion in marital-status category $i$ and $n_j$ is the total for sex group $j$. This null hypothesis says that the distribution of marital status is identical for mothers of male and female babies.</p>
+<p><code>chi_squared_stat</code> computes $\chi^2 = \sum_{ij} (O_{ij} - E_{ij})^2 / E_{ij}$, the sum over all cells of the squared standardised residual. Under $H_0$ and assuming expected counts are not too small (a common rule of thumb is $E_{ij} \geq 5$, satisfied here), this statistic follows a $\chi^2$ distribution. The degrees of freedom are <code>n - 1 = 9</code>, where $n = 10$ is the total number of cells. Using <code>axis=None</code> in <code>scipy.stats.chisquare</code> treats the whole 5×2 table as one joint test rather than performing separate column-wise tests — this is essential for correctly pooling evidence across all cells.</p>
+<p>The p-value of 0.925 is large: the observed pattern is entirely consistent with the null hypothesis. The conclusion — no support for the Trivers-Willard hypothesis using this proxy — illustrates that a statistically non-significant result can be substantively informative when the sample is large enough that a real effect would likely have been detected.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f4d4102">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12953,6 +13107,10 @@ p-value 0.0018269483689770105
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise demonstrates that the <code>Normal</code> class machinery extends directly to published summary statistics: when a study reports estimated means and standard errors (but not raw data), you can construct <code>Normal(mu, se**2)</code> objects directly, since the standard error <strong>is</strong> the standard deviation of the sampling distribution of the mean.</p>
+<p>The solution creates four <code>Normal</code> objects with variances set to $\text{SE}^2$ rather than $\sigma^2/n$. This bypasses the need to know sample sizes — the standard error already encodes that information. The differences <code>male_before - female_before</code> and <code>male_after - female_after</code> give sampling distributions for the gender gap at each time point. Their variances add because the male and female group estimates are independent:</p>
+<p>$$\text{Var}(\bar{X}_m - \bar{X}_f) = \text{SE}_m^2 + \text{SE}_f^2$$</p>
+<p>The difference-in-differences <code>diff_after - diff_before</code> then gives the change in the gap, again with compounding variances. The <code>summarize</code> function computes a p-value for each quantity by evaluating <code>dist.cdf(0)</code> (or its complement): if the distribution's mean is positive, the p-value for testing whether the true quantity is zero or negative is the probability mass below zero.</p>
+<p>The key result — mean $-1.4$, 95% CI $[-2.34, -0.46]$, $p \approx 0.002$ — provides strong evidence that the gender gap in self-reported programming contribution narrowed after the intervention. A hidden assumption throughout is that the reported standard errors are <strong>frequentist</strong> standard errors (not Bayesian posterior standard deviations), and that the four group estimates are mutually independent — the study design (separate pre/post surveys with different male/female groups) makes this plausible but worth examining for repeated-measures structures.</p></div></main>
 </body>
 </html>

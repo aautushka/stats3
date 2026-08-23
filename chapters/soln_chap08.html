@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8019,7 +8018,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8130,6 +8128,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -10175,7 +10323,9 @@ Use the sampling distribution to compute the standard error of the estimate and 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=511533f9">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The solution uses <code>np.std(weights)</code> without the <code>ddof</code> argument, which defaults to dividing by $n$ rather than $n-1$. This computes the biased (population-formula) standard deviation — a deliberate choice that will resurface in Exercise 8.4.</p>
+<p>The bootstrap works by treating the observed sample as a stand-in for the unknown population and re-drawing from it with replacement. Each call to <code>resample(weights)</code> produces a new array of the same length as the original by sampling with replacement; the 1001 resulting standard deviations form an approximate sampling distribution of $\hat{\sigma}$. This is valid under an exchangeability assumption: the observations must be i.i.d. (or at least exchangeable), so that shuffling and re-drawing preserves the relevant structure of the data. If the penguins were not an independent random sample — say, if weights were collected from family groups — the bootstrap would understate variability.</p>
+<p>The standard error is then just <code>np.std(sample_stds)</code>: the standard deviation of the bootstrap distribution measures how much $\hat{\sigma}$ would vary across repeated samples of the same size. The 90% confidence interval uses <code>np.percentile(sample_stds, [5, 95])</code>, the percentile (basic) bootstrap CI. This interval is only approximately correct; it relies on the bootstrap distribution of $\hat{\sigma}$ being a good proxy for the true sampling distribution. For standard deviation, unlike for the mean, there is no Central Limit Theorem guarantee, so the approximation is less tight at small $n$.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=511533f9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10410,7 +10560,8 @@ Name: htm3, dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89a7e1c1">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The mechanics here mirror Exercise 8.1 — 1001 bootstrap resamples, each of length equal to the full BRFSS male sample (~154,000 observations), computing <code>np.mean</code> on each resample. The resulting CI is extremely narrow (approximately 178.04–178.10 cm) because the standard error of the mean scales as $\sigma/\sqrt{n}$, and $n$ is very large.</p>
+<p>This tightness reveals a fundamental distinction between sampling variability and other sources of error. The standard error quantifies only random-sampling noise — how much the estimate would jump around if you drew a fresh probability sample of the same size. But the BRFSS uses a complex stratified design with deliberate oversampling of subgroups; failing to apply survey weights introduces selection bias that is entirely invisible to the bootstrap, because the bootstrap only resamples the data you have, not from a corrected population. Similarly, self-reported heights are known to be systematically overstated, creating measurement bias. And the anomalous spikes in the data at extreme values (61 cm, 243 cm) suggest recording or transmission errors. All of these biases can be much larger in magnitude than the 0.06 cm CI width. The lesson is that narrow confidence intervals signal precision of the estimate conditional on the data being representative — they say nothing about whether the data-generating process itself is unbiased.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89a7e1c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10668,7 +10819,8 @@ Do the sample medians converge to the actual median?</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe96d297">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>For an exponential distribution with mean $\lambda$, the probability density is $f(x) = \frac{1}{\lambda} e^{-x/\lambda}$. The population median is the value $m$ satisfying $F(m) = 0.5$, giving $1 - e^{-m/\lambda} = 0.5$, so $m = \lambda \ln 2$. The code evaluates this as <code>np.log(2) * actual_mean</code>, approximately 6.93 for $\lambda = 10$.</p>
+<p>The solution generates a sequence of samples of increasing size $n$ and plots both the sample mean and sample median against their respective population targets. Both converge as $n$ grows — both estimators are <strong>consistent</strong>. But the mean is also <strong>unbiased</strong>: the average of 100,001 sample means with $n=10$ is approximately 10.005, indistinguishable from $\lambda=10$ within simulation noise. The sample median is not unbiased for the population median: the average of 100,001 sample medians lies noticeably below the population median $\ln 2 \cdot \lambda \approx 6.93$. This bias arises because the median of a small sample from a skewed distribution has a finite-sample distribution that is itself skewed — Jensen's inequality applied to the CDF inversion. The distinction matters for practice: if you were trying to estimate the mean time between goals using the median (perhaps as a more robust alternative), you would need to correct for this bias, or use the plug-in relationship $\hat{\lambda} = \hat{m} / \ln 2$ to recover an unbiased estimate of $\lambda$ from the sample median.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe96d297">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10833,7 +10985,12 @@ Check whether either of these is an unbiased estimator of standard deviation.</p
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1e1698d0">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise demonstrates one of the more counterintuitive facts in estimation theory. The <strong>biased</strong> variance estimator divides by $n$:</p>
+<p>$$S^2_n = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2$$</p>
+<p>The <strong>unbiased</strong> variance estimator divides by $n-1$ (Bessel's correction):</p>
+<p>$$s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2, \quad E[s^2] = \sigma^2$$</p>
+<p>Taking square roots of both and averaging over many samples of size 10 from Normal(3.7, 0.46), neither <code>biased_std</code> (sqrt of $S^2_n$) nor <code>unbiased_std</code> (sqrt of $s^2$) produces an average close to 0.46. Both underestimate the population $\sigma$.</p>
+<p>The reason is Jensen's inequality: the square root is a concave function, so $E[\sqrt{X}] \leq \sqrt{E[X]}$. Because $E[s^2] = \sigma^2$, it follows that $E[s] = E[\sqrt{s^2}] \leq \sqrt{E[s^2]} = \sigma$. Correcting for this would require a correction factor that depends on $n$ and on the assumed distribution — for the normal case the correction uses the chi distribution's mean, giving $c_4(n)$. No single clean formula works distribution-free. This is why, in practice, we accept that sample standard deviations are slightly biased and treat the bias as negligible for large $n$.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1e1698d0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11059,7 +11216,11 @@ As data, you have serial numbers recovered from <code>k</code> captured tanks.</
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87a467bb">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The estimator here is</p>
+<p>$$\hat{N} = m + \frac{m - k}{k}$$</p>
+<p>where $m$ is the maximum observed serial number and $k$ is the number of tanks captured. This can be rearranged to $\hat{N} = m \cdot \frac{k+1}{k} - 1$. The setup assumes serial numbers are drawn without replacement from a discrete uniform distribution on ${1, 2, \ldots, N}$ — a finite population sampling problem, not an i.i.d. one, so this is a rare situation where <code>replace=False</code> is the correct model.</p>
+<p>The minimum sufficient statistic for $N$ is $(m, k)$ alone. The formula inflates $m$ by the average gap between order statistics: if $k$ tanks are drawn uniformly from $N$, the expected spacing between consecutive order statistics is $\frac{N+1}{k+1}$, so the expected gap between the maximum observation and $N$ is also approximately $\frac{m-k}{k}$. The simulation confirms near-unbiasedness: 10,001 estimates average to about 121.7 against the true $N=122$. The residual shortfall (about 0.3) is a small-sample finite-population correction that vanishes as $k/N \to 0$.</p>
+<p>A key hidden assumption is that the captures are a simple random sample without replacement from all tanks. If certain serial number ranges (say, tanks on the front line) were more likely to be captured, $m$ would be biased upward and the estimate would be inflated.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87a467bb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11335,6 +11496,8 @@ For an overview of the topic and an explanation of the error, <a href="https://w
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise replicates the Miller and Sanjurjo (2018) finding: the statistic "fraction of hits following three consecutive hits," computed on a finite i.i.d. Bernoulli(0.5) sequence, has expected value strictly less than 0.5 even though the shots are truly independent.</p>
+<p>The mechanism in the code: <code>np.correlate(seq, [1,1,1], mode="valid")</code> slides a window of length 3 over the sequence and returns the dot product with the all-ones kernel at each position — equivalent to computing the sum of each consecutive triple. Positions where this sum equals 3 identify the end of a run of three hits; the element at index <code>i+3</code> is the successor. The function carefully excludes the last position (where no successor exists), which is itself a source of bias: runs of three hits that fall at the very end of the sequence are excluded from the denominator but would have contributed a hit had the sequence continued.</p>
+<p>Running 10,001 simulations with sequence length 50 gives an average conditional probability of about 0.42 — far below 0.5. Increasing to length 100 gives ~0.46, and to 200 gives ~0.48. The statistic converges to 0.5 as sequence length grows (it is <strong>consistent</strong>) but is downward biased for any finite $n$ — exactly the property that fooled Gilovich, Vallone, and Tversky (1985) into concluding no hot hand existed. <code>np.nanmean</code> correctly ignores simulations where no triple-hit occurred (which returns <code>np.nan</code>), avoiding the misleading anchor of treating "no qualifying events" as a zero probability.</p></div></main>
 </body>
 </html>

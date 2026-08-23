@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8017,6 +8016,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -10537,7 +10686,11 @@ Which is a better predictor of weight, culmen length or flipper length?</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=54e8ffe7">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>linregress</code> solves the ordinary least squares problem: it finds the slope $\hat{\beta}$ and intercept $\hat{\alpha}$ that minimise the sum of squared residuals $\sum_i (y_i - \hat{\alpha} - \hat{\beta} x_i)^2$. The closed-form solution is</p>
+<p>$$\hat{\beta} = \frac{\sum_i (x_i - \bar{x})(y_i - \bar{y})}{\sum_i (x_i - \bar{x})^2}, \qquad \hat{\alpha} = \bar{y} - \hat{\beta}\bar{x}$$</p>
+<p>which is algebraically what the hand-rolled <code>least_squares</code> function from the chapter computes. For Adelie penguins, fitting body mass on culmen length gives a slope of about 94.5 g/mm and an $r$ of approximately 0.549, yielding $R^2 \approx 0.30$. Compared with the flipper-length regression ($r \approx 0.468$, $R^2 \approx 0.22$), culmen length explains about eight more percentage points of the variance in mass — a modest but real improvement.</p>
+<p>The key interpretive step the exercise asks you to perform is reading <code>result.rvalue</code> and squaring it to get $R^2$. These two quantities tell different stories: $r$ lives on $[-1, 1]$ and encodes both magnitude and direction of the linear association, while $R^2 \in [0, 1]$ is always non-negative and answers the question "by what fraction does the fitted line reduce mean squared prediction error relative to always guessing the mean?" Because $R^2$ is the square of $r$ in simple linear regression, a modest-looking $r = 0.55$ translates to $R^2 = 0.30$, meaning 70% of the variance in weight is still unexplained by culmen length alone.</p>
+<p>A hidden assumption throughout is that the relationship is linear and that the residuals are roughly homoskedastic (constant spread across all values of $x$). Inspecting the scatter plot is the right first check — if the cloud fans out as $x$ increases, a transformation may be more appropriate, as the next exercise explores.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=54e8ffe7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10683,7 +10836,10 @@ We can approximate the sampling distribution of the intercept the same way:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41024fcb">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>This exercise extends the slope-resampling from the chapter to the intercept, revealing an important asymmetry: the intercept is far more variable than the slope. The bootstrap 90% CI for the intercept spans roughly $[-3895, -1187]$ grams — a range of about 2700 g — while its standard error from resampling (~832 g) is almost double the parametric <code>intercept_stderr</code> (~458 g) that <code>linregress</code> reports.</p>
+<p>The discrepancy is worth understanding. The parametric <code>intercept_stderr</code> is derived under the classical OLS assumption that residuals are i.i.d. Normal with constant variance, using the formula $\text{SE}(\hat{\alpha}) = \hat{\sigma}\sqrt{\frac{1}{n} + \frac{\bar{x}^2}{\sum(x_i-\bar{x})^2}}$. Bootstrap resampling makes no distributional assumptions; it treats the observed data as a proxy population and propagates sampling variability empirically. When the residual distribution is not Normal — or when the sample is small — bootstrap standard errors are often more reliable.</p>
+<p>The large uncertainty in the intercept has a geometric explanation. The intercept is the predicted value at $x = 0$ (flipper length of 0 mm), which is far outside the range of the data (~172–210 mm). Extrapolating the fitted line that distance amplifies any uncertainty in the slope enormously. This is why evaluating a regression at the mean $\bar{x}$ gives the most precise predictions — that is the pivot point around which all fitted lines from bootstrap samples rotate.</p>
+<p>The exercise also reinforces the exchangeability assumption underlying bootstrap validity: resampling rows with replacement is only justified if observations are independent and identically distributed. For these penguin measurements, that's reasonable, but time-series or clustered data would violate it.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41024fcb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10869,6 +11025,11 @@ Is the slope close to 2?</p>
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>Body Mass Index uses the formula $\text{BMI} = w / h^2$, with the exponent 2 chosen historically on the basis that average weight scales approximately with height squared. This exercise asks you to test that claim by recovering the exponent from data — a nice demonstration of how a power-law relationship can be linearised with logarithms.</p>
+<p>If $w = b \cdot h^a$, taking $\log_{10}$ of both sides gives</p>
+<p>$$\log_{10} w = \log_{10} b + a \cdot \log_{10} h$$</p>
+<p>which is a linear equation in $(\log_{10} h,\, \log_{10} w)$ with slope $a$ and intercept $\log_{10} b$. Running <code>linregress(log_heights, log_weights)</code> therefore estimates $a$ directly as the slope — no algebraic post-processing required. The result, approximately 2.04, is indeed close to 2, providing empirical support for the BMI convention.</p>
+<p>The choice of logarithm base is immaterial for the slope: if you use $\ln$ instead of $\log_{10}$, the slope $a$ is unchanged because the change of base is a multiplicative constant that cancels in the ratio that defines slope. Only the intercept changes.</p>
+<p>A hidden assumption here is that the power-law model $w = b h^a$ is the correct functional form. The linearity of the log-log scatter plot (along with the symmetric residuals) is evidence in its favour, but not proof. The model also assumes multiplicative noise — that the true relationship is $w = b h^a \cdot \epsilon$ where $\epsilon$ is a positive random variable, which is exactly what the log transformation converts into additive Normal noise. If instead the noise were additive on the raw scale ($w = b h^a + \epsilon$), working on the log scale would not be appropriate. Examining the residual distribution (roughly symmetric on the log scale) is the practical check the solution implicitly performs.</p></div></main>
 </body>
 </html>

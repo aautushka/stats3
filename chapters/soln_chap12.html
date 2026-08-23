@@ -7906,7 +7906,6 @@ blockquote {
   background: #f5f7fc !important;
 }
 </style>
-
 <style>
 /* ── Page breaks ─────────────────────────────────────────────────────────── */
 pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
@@ -8017,6 +8016,156 @@ blockquote {
   color: #3a3a3a !important;
   font-style: italic !important;
   background: #f5f7fc !important;
+}
+</style>
+<style>
+/* ── Page breaks ─────────────────────────────────────────────────────────── */
+pre, .highlight, .jp-InputArea, .jp-OutputArea, .cell,
+.input_area, .output_area { break-inside: avoid; }
+
+/* ── Hide Jupyter chrome, anchors, and stderr/warning outputs ────────────── */
+.jp-InputPrompt, .jp-OutputPrompt,
+.input_prompt, .output_prompt,
+.prompt, div.prompt,
+.out_prompt_overlay,
+#notebook-container .prompt,
+.celltoolbar, .ctb_globalshow,
+.jp-Toolbar, #menubar, #header,
+.navbar, .nav,
+a.anchor-link, .anchor-link,
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"],
+.output_stderr { display: none !important; }
+
+/* ── Page & content layout ───────────────────────────────────────────────── */
+body { background: #fff; margin: 0; padding: 0; }
+#notebook-container, .jp-Notebook, .container {
+  max-width: 100% !important; width: 100% !important;
+  padding: 0 !important; box-shadow: none !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+body, p, li, td, th, blockquote,
+.jp-RenderedHTMLCommon,
+.jp-RenderedHTMLCommon p,
+.text_cell_render {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 11.5pt !important;
+  line-height: 1.38 !important;
+  color: #1c1c1c !important;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a { color: #1c1c1c !important; text-decoration: none !important; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: Georgia, serif !important; color: #111 !important; }
+h1 {
+  font-size: 20pt !important; font-weight: 700;
+  margin: 2em 0 0.5em !important;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #ddd;
+}
+h2 { font-size: 14pt !important; font-weight: 700; margin: 1.6em 0 0.4em !important; }
+h3 { font-size: 12pt !important; font-weight: 700; margin: 1.3em 0 0.3em !important; }
+
+/* ── Paragraphs ──────────────────────────────────────────────────────────── */
+p, .jp-RenderedHTMLCommon p, .text_cell_render p {
+  text-align: justify !important;
+  hyphens: auto !important;
+  margin: 0 0 0.75em !important;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+pre, code, kbd, samp,
+.jp-InputArea pre, .highlight pre {
+  font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace !important;
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+  color: #1c1c1c !important;
+}
+div.highlight, .jp-InputArea .highlight {
+  background: #f6f6f6 !important;
+  border: none !important;
+  border-left: 3px solid #5b8dd9 !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 0.85em 1em 0.85em 1.1em !important;
+  margin: 0.3em 0 !important;
+}
+
+/* ── Output ──────────────────────────────────────────────────────────────── */
+.jp-OutputArea-output pre, .output_text pre, .output_subarea pre {
+  background: #fafafa !important;
+  border-left: 3px solid #d0d0d0 !important;
+  padding: 0.55em 1em !important;
+  font-size: 8.5pt !important;
+  color: #333 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  margin: 0.4em 0 !important;
+  font-family: 'SF Mono', Menlo, Monaco, monospace !important;
+  font-size: 7.5pt !important;
+  width: auto !important;
+}
+th {
+  background: #2e5fa3 !important;
+  color: #fff !important;
+  padding: 2px 7px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+td {
+  padding: 1px 7px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  color: #1c1c1c !important;
+  text-align: left !important;
+}
+tr:nth-child(even) td { background: #f2f5fb !important; }
+.split-table-label {
+  font-family: Georgia, serif; font-size: 7.5pt; color: #888;
+  text-align: left; margin: 6px 0 2px; font-style: italic;
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+img, svg { max-width: 88% !important; height: auto; display: block; margin: 1em auto; }
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #5b8dd9 !important;
+  margin: 1em 0 !important;
+  padding: 0.4em 1em !important;
+  color: #3a3a3a !important;
+  font-style: italic !important;
+  background: #f5f7fc !important;
+}
+
+/* ── Commentary blocks (injected after each exercise) ────────────────────── */
+.commentary-block {
+  background: #f0f4fb;
+  border-left: 4px solid #2e5fa3;
+  border-radius: 0 4px 4px 0;
+  padding: 0.7em 1em 0.7em 1.1em;
+  margin: 0.8em 0 1.2em;
+  break-inside: avoid;
+}
+.commentary-banner {
+  font-family: -apple-system, Helvetica, sans-serif !important;
+  font-size: 8pt !important; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #2e5fa3; margin-bottom: 0.4em;
+}
+.commentary-block p {
+  font-size: 10.5pt !important; line-height: 1.45 !important;
+  margin: 0 0 0.4em !important; color: #222 !important;
+}
+.commentary-block code {
+  font-size: 8.5pt !important; background: #e4ecf7 !important;
+  padding: 1px 3px; border-radius: 2px;
+}
+.commentary-block ul, .commentary-block ol {
+  margin: 0.2em 0 0.4em 1.2em; font-size: 10.5pt !important;
 }
 </style>
 </head>
@@ -11245,156 +11394,7 @@ Instructions for downloading the data are in the notebook for this chapter.</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Entity</th>
-<th>Code</th>
-<th>Year</th>
-<th>2024</th>
-<th>2023</th>
-<th>2022</th>
-<th>2021</th>
-<th>2020</th>
-<th>2019</th>
-<th>2018</th>
-<th>...</th>
-<th>1959</th>
-<th>1958</th>
-<th>1956</th>
-<th>1954</th>
-<th>1952</th>
-<th>1957</th>
-<th>1955</th>
-<th>1953</th>
-<th>1951</th>
-<th>1950</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>Afghanistan</td>
-<td>AFG</td>
-<td>1</td>
-<td>3.300064</td>
-<td>-4.335608</td>
-<td>-0.322859</td>
-<td>-1.001608</td>
-<td>-2.560545</td>
-<td>0.585145</td>
-<td>1.042471</td>
-<td>...</td>
-<td>-2.333814</td>
-<td>0.576404</td>
-<td>-3.351925</td>
-<td>-2.276692</td>
-<td>-2.812619</td>
-<td>-4.239172</td>
-<td>-2.191683</td>
-<td>-2.915993</td>
-<td>-3.126317</td>
-<td>-2.655707</td>
-</tr>
-<tr>
-<th>1</th>
-<td>Afghanistan</td>
-<td>AFG</td>
-<td>2</td>
-<td>1.024550</td>
-<td>4.187041</td>
-<td>2.165870</td>
-<td>5.688000</td>
-<td>2.880046</td>
-<td>0.068664</td>
-<td>3.622793</td>
-<td>...</td>
-<td>-1.545529</td>
-<td>0.264962</td>
-<td>0.455350</td>
-<td>-0.304205</td>
-<td>0.798226</td>
-<td>-2.747945</td>
-<td>1.999074</td>
-<td>1.983414</td>
-<td>-2.642800</td>
-<td>-3.996040</td>
-</tr>
-<tr>
-<th>2</th>
-<td>Afghanistan</td>
-<td>AFG</td>
-<td>3</td>
-<td>5.843506</td>
-<td>10.105444</td>
-<td>10.483686</td>
-<td>9.777976</td>
-<td>6.916731</td>
-<td>5.758049</td>
-<td>10.794412</td>
-<td>...</td>
-<td>5.942937</td>
-<td>7.716459</td>
-<td>5.090270</td>
-<td>4.357703</td>
-<td>4.796146</td>
-<td>4.434027</td>
-<td>7.066073</td>
-<td>4.590406</td>
-<td>3.054388</td>
-<td>3.491112</td>
-</tr>
-<tr>
-<th>3</th>
-<td>Afghanistan</td>
-<td>AFG</td>
-<td>4</td>
-<td>11.627398</td>
-<td>14.277164</td>
-<td>17.227650</td>
-<td>15.168276</td>
-<td>12.686832</td>
-<td>13.838840</td>
-<td>14.321226</td>
-<td>...</td>
-<td>13.752827</td>
-<td>14.712909</td>
-<td>11.982360</td>
-<td>12.155265</td>
-<td>13.119270</td>
-<td>8.263829</td>
-<td>10.418768</td>
-<td>11.087193</td>
-<td>9.682878</td>
-<td>8.332797</td>
-</tr>
-<tr>
-<th>4</th>
-<td>Afghanistan</td>
-<td>AFG</td>
-<td>5</td>
-<td>18.957850</td>
-<td>19.078170</td>
-<td>19.962734</td>
-<td>19.885902</td>
-<td>18.884047</td>
-<td>18.461287</td>
-<td>18.100782</td>
-<td>...</td>
-<td>17.388723</td>
-<td>16.352045</td>
-<td>20.125462</td>
-<td>18.432117</td>
-<td>17.614851</td>
-<td>15.505956</td>
-<td>15.599709</td>
-<td>17.865084</td>
-<td>17.095737</td>
-<td>17.329062</td>
-</tr>
-</tbody>
-</table>
+<div><div class="split-table-label">(part 1 of 3)</div><table><thead><tr><th></th><th>Entity</th><th>Code</th><th>Year</th><th>2024</th><th>2023</th><th>2022</th><th>2021</th><th>2020</th><th>2019</th></tr></thead><tbody><tr><th>0</th><td>Afghanistan</td><td>AFG</td><td>1</td><td>3.300064</td><td>-4.335608</td><td>-0.322859</td><td>-1.001608</td><td>-2.560545</td><td>0.585145</td></tr><tr><th>1</th><td>Afghanistan</td><td>AFG</td><td>2</td><td>1.024550</td><td>4.187041</td><td>2.165870</td><td>5.688000</td><td>2.880046</td><td>0.068664</td></tr><tr><th>2</th><td>Afghanistan</td><td>AFG</td><td>3</td><td>5.843506</td><td>10.105444</td><td>10.483686</td><td>9.777976</td><td>6.916731</td><td>5.758049</td></tr><tr><th>3</th><td>Afghanistan</td><td>AFG</td><td>4</td><td>11.627398</td><td>14.277164</td><td>17.227650</td><td>15.168276</td><td>12.686832</td><td>13.838840</td></tr><tr><th>4</th><td>Afghanistan</td><td>AFG</td><td>5</td><td>18.957850</td><td>19.078170</td><td>19.962734</td><td>19.885902</td><td>18.884047</td><td>18.461287</td></tr></tbody></table><div class="split-table-label">(part 2 of 3)</div><table><thead><tr><th></th><th>2018</th><th>...</th><th>1959</th><th>1958</th><th>1956</th><th>1954</th><th>1952</th><th>1957</th><th>1955</th></tr></thead><tbody><tr><th>0</th><td>1.042471</td><td>...</td><td>-2.333814</td><td>0.576404</td><td>-3.351925</td><td>-2.276692</td><td>-2.812619</td><td>-4.239172</td><td>-2.191683</td></tr><tr><th>1</th><td>3.622793</td><td>...</td><td>-1.545529</td><td>0.264962</td><td>0.455350</td><td>-0.304205</td><td>0.798226</td><td>-2.747945</td><td>1.999074</td></tr><tr><th>2</th><td>10.794412</td><td>...</td><td>5.942937</td><td>7.716459</td><td>5.090270</td><td>4.357703</td><td>4.796146</td><td>4.434027</td><td>7.066073</td></tr><tr><th>3</th><td>14.321226</td><td>...</td><td>13.752827</td><td>14.712909</td><td>11.982360</td><td>12.155265</td><td>13.119270</td><td>8.263829</td><td>10.418768</td></tr><tr><th>4</th><td>18.100782</td><td>...</td><td>17.388723</td><td>16.352045</td><td>20.125462</td><td>18.432117</td><td>17.614851</td><td>15.505956</td><td>15.599709</td></tr></tbody></table><div class="split-table-label">(part 3 of 3)</div><table><thead><tr><th></th><th>1953</th><th>1951</th><th>1950</th></tr></thead><tbody><tr><th>0</th><td>-2.915993</td><td>-3.126317</td><td>-2.655707</td></tr><tr><th>1</th><td>1.983414</td><td>-2.642800</td><td>-3.996040</td></tr><tr><th>2</th><td>4.590406</td><td>3.054388</td><td>3.491112</td></tr><tr><th>3</th><td>11.087193</td><td>9.682878</td><td>8.332797</td></tr><tr><th>4</th><td>17.865084</td><td>17.095737</td><td>17.329062</td></tr></tbody></table></div>
 <p>5 rows × 78 columns</p>
 </div>
 </div>
@@ -11729,7 +11729,12 @@ If you are curious, repeat this analysis with other intervals or data from other
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f6e97eba">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p><code>seasonal_decompose</code> with <code>model="additive"</code> assumes the observed series can be written as</p>
+<p>$$y_t = T_t + S_t + \varepsilon_t$$</p>
+<p>where $T_t$ is a slowly-varying trend, $S_t$ is a periodic seasonal component, and $\varepsilon_t$ is a residual. Internally, the function estimates $T_t$ using a centred moving average over the specified period (12 months here), which is a low-pass filter that removes oscillations at the seasonal frequency. $S_t$ is then estimated by averaging the detrended values within each calendar month across all years, producing 12 fixed offsets that repeat identically. This is the classical Census X-11 decomposition logic.</p>
+<p>The critical hidden assumption is <strong>stationarity of the seasonal amplitude</strong>: the additive model treats the 12 month-offsets as constant across the entire sample. For temperature, this is defensible because the seasonal swing (summer–winter contrast) does not obviously grow with the trend. If you tried this on the solar data you would see the assumption fail badly.</p>
+<p>The linear OLS fit on the trend — <code>smf.ols("trend ~ months", data=data).fit()</code> — uses ordinary least squares on the moving-average trend rather than on the raw series. This is intentional: the moving average has already removed the seasonal variation, so the regression is not confounded by it. The explanatory variable <code>months</code> is a simple integer index, so the fitted coefficient $\hat\beta_1$ has units of °C per month. Multiplying by 12 converts to an annual rate. The result (approximately 0.041 °C per year over 2000–2024) is a descriptive estimate, not a causal inference — it captures whatever combination of anthropogenic forcing, natural variability, and local measurement effects operated over this window.</p>
+<p>Two subtleties are worth flagging. First, the moving average leaves <code>NaN</code> values at both ends of the trend series (six months at each end for a 12-month window), so <code>.dropna()</code> is necessary before fitting. Second, the $R^2$ from regressing on the moving-average trend is not the same as the $R^2$ of the full model against the raw data — the decomposition has already absorbed seasonal variance, so the linear fit is only being judged against residual trend variability.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f6e97eba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12047,7 +12052,13 @@ Plot the forecast along with the test series, and compute the mean absolute perc
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff741b88">
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The choice of <code>model="multiplicative"</code> encodes the assumption that the series satisfies</p>
+<p>$$y_t = T_t \cdot S_t \cdot \varepsilon_t$$</p>
+<p>meaning the seasonal component and the noise are proportional to the level of the trend. Equivalently, $\log y_t = \log T_t + \log S_t + \log \varepsilon_t$, which is an additive model on the log scale. Utility-scale solar grew by roughly an order of magnitude over the training window, so a fixed additive seasonal offset would make no physical sense: a summer surplus of 1 GWh is negligible when total output is 5 GWh but meaningful when it is 50 GWh. The multiplicative model captures this by expressing the seasonal component as a dimensionless ratio (approximately 0.75 in winter, 1.25 in summer) rather than an absolute deviation.</p>
+<p>The quadratic trend model, <code>smf.ols("trend ~ months + I(months**2)", data=data).fit()</code>, adds a second-order polynomial term. The <code>I()</code> wrapper in Patsy is required because <code>**</code> in a formula string otherwise denotes a crossing interaction between variables, not exponentiation; <code>I(months**2)</code> forces the expression to be evaluated as pure Python, yielding the squared integer. The quadratic fits the accelerating growth phase of solar adoption better than a linear model, which would underestimate recent values. Both the linear and quadratic coefficients are highly significant, confirming that curvature is real in the training window.</p>
+<p>Forecasting proceeds by evaluating the fitted polynomial at future integer month indices and multiplying by the average seasonal ratios:</p>
+<p>$$\hat{y}<em>t = \hat{T}(t) \cdot \bar{S}</em>{m(t)}$$</p>
+<p>where $m(t)$ is the calendar month of time $t$ and $\bar{S}_{m}$ is the mean seasonal factor for that month. The MAPE of roughly 10.7% (versus 3.8% for nuclear in the same framework) reflects a fundamental limitation: a polynomial extrapolated beyond its fitting range eventually diverges, and the quadratic underestimates continued near-exponential adoption. The exercise illustrates that model form selection is not just about in-sample fit but about whether the assumed functional form is physically reasonable over the forecast horizon.</p></div><div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff741b88">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12312,6 +12323,10 @@ Generate a five-year forecast and plot it along with its confidence interval.</p
 </div>
 </div>
 </div>
-</main>
+<div class="commentary-block"><div class="commentary-banner">Commentary</div><p>The SARIMA model fitted here, <code>order=([1, 6], 0, [6])</code> with <code>seasonal_order=(0, 1, 0, 12)</code>, deserves element-by-element unpacking because each number reflects a modelling decision.</p>
+<p>The <code>seasonal_order=(0, 1, 0, 12)</code> instructs the model to take one round of seasonal differencing at lag 12, forming $\tilde{y}<em>t = y_t - y</em>{t-12}$. This is analogous to year-over-year differencing and removes a seasonal unit root — a pattern where the series in each calendar month follows a random walk rather than reverting to a fixed seasonal level. The differencing stabilises the variance of the seasonal component and is the "I" (integrated) part of the acronym.</p>
+<p>The <code>order=([1, 6], 0, [6])</code> specifies the non-seasonal AR and MA structure applied to the differenced series. Including lags 1 and 6 in the AR component means the model predicts $\tilde{y}_t$ from the values six months ago and one month ago — plausible for hydroelectric generation, which depends on snowpack and rainfall patterns that carry multi-month memory. The MA lag at 6 models the persistence of forecast errors at a half-year horizon.</p>
+<p>The <code>get_forecast(steps=60)</code> call uses the fitted state-space representation of the ARIMA model (via a Kalman filter) to propagate the model forward 60 steps. Crucially, the confidence interval widens with the forecast horizon because prediction error variance accumulates: each step adds the one-step-ahead innovation variance $\hat\sigma^2$, so the interval grows roughly as $\sqrt{h}$ for an AR(1)-type process. The <code>conf_int()</code> method returns the 95% interval by default, derived from the asymptotic normality of the forecast distribution — an assumption that may be too optimistic if the residuals are fat-tailed or if the model is misspecified.</p>
+<p>The <code>n_missing=24</code> burn-in period reflects a practical constraint: seasonal differencing consumes 12 observations, and the longest non-seasonal lag (6 in both AR and MA) consumes up to 6 more, leaving the first 18 to 24 fitted values unreliable. Trimming them before computing $R^2$ avoids artificially inflating or deflating the fit statistic due to initialisation artefacts.</p></div></main>
 </body>
 </html>
